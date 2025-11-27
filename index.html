@@ -2,392 +2,274 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <title>Alaleh Valiallahi - Prospective PhD Student</title>
+  <title>Alaleh Valiallahi – Prospective PhD Student</title>
   <meta name="viewport" content="width=device-width, initial-scale=1" />
+
   <style>
     :root {
-      --bg: #f3f4f6;
-      --card-bg: #ffffff;
       --accent: #2563eb;
-      --accent-soft: #dbeafe;
-      --text-main: #111827;
-      --text-muted: #6b7280;
-      --border-soft: #e5e7eb;
-    }
-
-    * {
-      box-sizing: border-box;
+      --accent-light: #dbeafe;
+      --text-main: #0f172a;
+      --text-muted: #64748b;
+      --bg: #f8fafc;
+      --card-bg: #ffffff;
     }
 
     body {
       margin: 0;
-      padding: 0;
-      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", system-ui,
-        sans-serif;
+      font-family: "Inter", -apple-system, BlinkMacSystemFont, sans-serif;
       background: var(--bg);
       color: var(--text-main);
       line-height: 1.6;
     }
 
-    .page {
-      max-width: 960px;
-      margin: 40px auto;
-      padding: 0 16px;
+    .container {
+      max-width: 1050px;
+      margin: auto;
+      padding: 20px;
     }
 
-    .card {
+    /* ---- HERO ---- */
+    .hero {
+      display: flex;
+      flex-direction: column-reverse;
+      gap: 20px;
       background: var(--card-bg);
-      border-radius: 16px;
+      padding: 30px;
+      border-radius: 18px;
       box-shadow: 0 18px 45px rgba(15, 23, 42, 0.08);
-      padding: 32px 24px 28px;
-      border: 1px solid var(--border-soft);
+      border: 1px solid #e2e8f0;
     }
 
-    @media (min-width: 768px) {
-      .card {
-        padding: 40px 40px 32px;
+    @media (min-width: 850px) {
+      .hero {
+        flex-direction: row;
+        align-items: center;
       }
     }
 
-    .name {
-      text-align: center;
-      font-size: 1.9rem;
-      font-weight: 700;
-      letter-spacing: 0.02em;
-      margin: 0 0 4px;
+    .hero-text {
+      flex: 1.1;
     }
 
-    .subtitle {
-      text-align: center;
-      font-size: 1rem;
+    .hero-name {
+      font-size: 2.1rem;
+      font-weight: 800;
+      margin-bottom: 4px;
+    }
+
+    .hero-title {
       color: var(--text-muted);
+      font-size: 1.05rem;
       margin-bottom: 14px;
     }
 
-    .contact-row {
+    .hero-p {
+      font-size: 0.98rem;
+      color: #334155;
+      margin-bottom: 16px;
+    }
+
+    .hero-tags {
       display: flex;
       flex-wrap: wrap;
-      justify-content: center;
-      gap: 8px 18px;
-      font-size: 0.95rem;
-      color: var(--text-muted);
-      margin-bottom: 24px;
+      gap: 8px;
     }
 
-    .contact-row a {
+    .tag {
+      background: var(--accent-light);
       color: var(--accent);
-      text-decoration: none;
-      font-weight: 500;
-    }
-
-    .contact-row a:hover {
-      text-decoration: underline;
-    }
-
-    .icon-links {
-      display: flex;
-      gap: 10px;
-      align-items: center;
-      justify-content: center;
-      flex-wrap: wrap;
-      margin-top: 4px;
-    }
-
-    .icon-badge {
-      display: inline-flex;
-      align-items: center;
-      gap: 6px;
-      padding: 4px 10px;
-      border-radius: 999px;
-      background: var(--accent-soft);
-      color: var(--accent);
-      font-size: 0.8rem;
+      padding: 6px 10px;
+      border-radius: 12px;
+      font-size: 0.78rem;
       font-weight: 600;
-      text-decoration: none;
       border: 1px solid #bfdbfe;
-      transition: transform 0.1s ease, box-shadow 0.1s ease,
-        background-color 0.1s ease;
     }
 
-    .icon-badge span.icon-circle {
-      width: 18px;
-      height: 18px;
-      border-radius: 999px;
-      background: var(--accent);
-      color: white;
-      display: inline-flex;
-      align-items: center;
+    .hero-img-wrap {
+      flex: 1;
+      display: flex;
       justify-content: center;
-      font-size: 0.7rem;
     }
 
-    .icon-badge:hover {
-      transform: translateY(-1px);
-      box-shadow: 0 8px 20px rgba(37, 99, 235, 0.27);
-      background-color: #eff6ff;
-      text-decoration: none;
+    .hero-img {
+      width: 260px;
+      height: 260px;
+      border-radius: 16px;
+      object-fit: cover;
+      box-shadow: 0 14px 35px rgba(0, 0, 0, 0.18);
+      border: 3px solid #ffffff;
     }
 
-    hr {
-      border: none;
-      border-top: 1px solid var(--border-soft);
-      margin: 24px 0 28px;
-    }
-
+    /* ---- SECTIONS ---- */
     .section {
-      margin-bottom: 26px;
-    }
-
-    .section:last-of-type {
-      margin-bottom: 0;
+      margin-top: 45px;
+      background: var(--card-bg);
+      padding: 28px;
+      border-radius: 18px;
+      box-shadow: 0 14px 40px rgba(15, 23, 42, 0.06);
+      border: 1px solid #e2e8f0;
     }
 
     .section h2 {
-      font-size: 1.15rem;
-      margin: 0 0 10px;
-      color: #111827;
-      display: inline-flex;
+      font-size: 1.2rem;
+      margin-bottom: 10px;
+      display: flex;
       align-items: center;
-      gap: 6px;
+      gap: 8px;
     }
 
     .section h2::before {
       content: "";
-      width: 4px;
+      width: 5px;
       height: 18px;
-      border-radius: 999px;
+      border-radius: 10px;
       background: var(--accent);
-      display: inline-block;
     }
 
-    .section p {
-      margin: 0;
-      font-size: 0.97rem;
-      color: #374151;
-    }
-
-    ul {
-      margin: 6px 0 0;
-      padding-left: 18px;
-      font-size: 0.95rem;
-      color: #374151;
-    }
-
-    .education-item {
-      margin-bottom: 8px;
-    }
-
-    .education-item strong {
-      font-weight: 600;
+    .education-item, .pub-item {
+      margin-bottom: 12px;
     }
 
     .pill {
-      display: inline-flex;
-      align-items: center;
-      padding: 1px 7px;
-      border-radius: 999px;
-      border: 1px solid var(--border-soft);
-      font-size: 0.7rem;
-      text-transform: uppercase;
-      letter-spacing: 0.04em;
+      background: #f1f5f9;
+      padding: 2px 8px;
+      font-size: 0.75rem;
       margin-left: 6px;
-      color: #374151;
-      background: #f9fafb;
-    }
-
-    .pub-list {
-      list-style: none;
-      padding-left: 0;
-      margin: 0;
-    }
-
-    .pub-item {
-      margin-bottom: 14px;
-      padding-bottom: 10px;
-      border-bottom: 1px dashed var(--border-soft);
-    }
-
-    .pub-item:last-child {
-      border-bottom: none;
-      padding-bottom: 0;
-    }
-
-    .pub-title {
-      font-weight: 600;
-      font-size: 0.97rem;
-      margin-bottom: 2px;
+      border-radius: 6px;
+      border: 1px solid #e2e8f0;
     }
 
     .pub-meta {
       font-size: 0.86rem;
       color: var(--text-muted);
-      font-style: italic;
-      margin-bottom: 2px;
     }
 
     .pub-link a {
-      font-size: 0.86rem;
       color: var(--accent);
+      font-size: 0.85rem;
       text-decoration: none;
-      font-weight: 500;
     }
 
     .pub-link a:hover {
       text-decoration: underline;
     }
 
-    .note {
-      font-size: 0.85rem;
-      color: var(--text-muted);
-      margin-top: 4px;
-    }
-
-    .footer-note {
-      margin-top: 20px;
+    .footer {
+      text-align: center;
       font-size: 0.8rem;
       color: var(--text-muted);
-      text-align: center;
+      margin-top: 50px;
+      margin-bottom: 20px;
+    }
+
+    .contact-row {
+      margin-top: 8px;
+      font-size: 0.95rem;
+    }
+
+    .contact-row a {
+      color: var(--accent);
+      text-decoration: none;
     }
   </style>
 </head>
+
 <body>
-  <div class="page">
-    <div class="card">
-      <h1 class="name">Alaleh Valiallahi</h1>
-      <div class="subtitle">Prospective PhD Student</div>
+  <div class="container">
 
-      <div class="contact-row">
-        <div>
-          Email:
-          <a href="mailto:avaliallahi92@gmail.com">avaliallahi92@gmail.com</a>
+    <!-- HERO -->
+    <div class="hero">
+      <div class="hero-text">
+        <div class="hero-name">Alaleh Valiallahi</div>
+        <div class="hero-title">Prospective PhD Student</div>
+
+        <div class="contact-row">
+          Email: <a href="mailto:avaliallahi92@gmail.com">avaliallahi92@gmail.com</a>
+          &nbsp;·&nbsp; Tehran, Iran
         </div>
-        <div>Location: Tehran, Iran</div>
-      </div>
 
-      <div class="icon-links">
-        <a
-          class="icon-badge"
-          href="https://scholar.google.com/citations?user=L6U-OsQAAAAJ&hl=en"
-          target="_blank"
-          rel="noopener"
-        >
-          <span class="icon-circle">GS</span>
-          <span>Google Scholar</span>
-        </a>
-
-        <a
-          class="icon-badge"
-          href="https://www.linkedin.com/in/alaleh-v-971b29b6/?originalSubdomain=ir"
-          target="_blank"
-          rel="noopener"
-        >
-          <span class="icon-circle">in</span>
-          <span>LinkedIn</span>
-        </a>
-      </div>
-
-      <hr />
-
-      <!-- ABOUT ME -->
-      <div class="section">
-        <h2>About Me</h2>
-        <p>
-          I am a researcher with a background in biotechnology, microbiology,
-          and molecular biology. My experience spans laboratory work, method
-          development, and data interpretation across different areas of life
-          sciences. I am broadly interested in translational research at the
-          interface of biology, technology, and human health, including topics
-          such as diagnostics, nanomedicine, and infectious diseases. I am
-          currently exploring opportunities for a fully funded PhD position
-          where I can contribute to collaborative, research-driven projects and
-          continue to grow as an independent scientist.
+        <p class="hero-p">
+          Motivated research-oriented applicant with hands-on wet-lab experience,
+          strong academic performance, and a growing publication record.
+          Interested in research at the intersection of microbiology,
+          biotechnology, diagnostics, and human health.
         </p>
-      </div>
 
-      <!-- EDUCATION -->
-      <div class="section">
-        <h2>Education</h2>
-        <div class="education-item">
-          <strong>M.Sc. Biotechnology</strong>
-          <span class="pill">GPA: 16.97 / 20 (≈3.7 / 4)</span>
-        </div>
-        <div class="education-item">
-          <strong>B.Sc. Cellular &amp; Molecular Biology – Microbiology</strong>
-          <span class="pill">GPA: 16.43 / 20 (≈3.6 / 4)</span>
+        <div class="hero-tags">
+          <div class="tag">First-author Q2 Review</div>
+          <div class="tag">PCR & LAMP Experience</div>
+          <div class="tag">M.Sc. & B.Sc. in Life Sciences</div>
+          <div class="tag">5+ Years Lab Experience</div>
         </div>
       </div>
 
-      <!-- PUBLICATIONS -->
-      <div class="section">
-        <h2>Selected Publications</h2>
-        <ul class="pub-list">
-          <li class="pub-item">
-            <div class="pub-title">
-              PLGA Nanoparticles as Drug Delivery Systems in Leishmaniasis
-              Chemotherapy
-            </div>
-            <div class="pub-meta">
-              A. Valiallahi et al., <em>Current Medicinal Chemistry</em>, 2024
-              (nanomedicine, drug delivery)
-            </div>
-            <div class="pub-link">
-              <a
-                href="https://doi.org/10.2174/0929867331666230823094737"
-                target="_blank"
-                rel="noopener"
-                >View article</a
-              >
-            </div>
-          </li>
-
-          <li class="pub-item">
-            <div class="pub-title">
-              Optimization for Rapid Detection of <em>E. coli</em> O157:H7
-              Using Real-Time LAMP
-            </div>
-            <div class="pub-meta">
-              A. Valiallahi et al., <em>Research in Molecular Medicine</em>,
-              2022 (molecular diagnostics, rapid AMR-related detection)
-            </div>
-            <div class="pub-link">
-              <a
-                href="https://doi.org/10.32598/rmm.10.2.903.8"
-                target="_blank"
-                rel="noopener"
-                >View article</a
-              >
-            </div>
-          </li>
-
-          <li class="pub-item">
-            <div class="pub-title">
-              Rapid Detection of <em>E. coli</em> O157:H7 Using Multiplex PCR
-            </div>
-            <div class="pub-meta">
-              A. Valiallahi et al., <em>Chulalongkorn Medical Journal</em>, 2022
-              (PCR diagnostics)
-            </div>
-            <div class="pub-link">
-              <a
-                href="https://www.researchgate.net/publication/366030059_Rapid_Detection_of_Escherichia_coli_O157H7_Using_Multiplex_PCR"
-                target="_blank"
-                rel="noopener"
-                >View article</a
-              >
-            </div>
-          </li>
-        </ul>
-        <div class="note">
-          A full list of publications, conference presentations, and teaching
-          experience is available in my CV upon request.
-        </div>
-      </div>
-
-      <div class="footer-note">
-        Last updated: 2025 &nbsp;|&nbsp; This page is intended for graduate and
-        PhD application purposes.
+      <div class="hero-img-wrap">
+        <!-- 🔥 عکس واقعی تو -->
+        <img src="Screenshot 2025-11-27 131605.png" class="hero-img"
+             alt="Microbiology lab petri dish plates" />
       </div>
     </div>
+
+    <!-- ABOUT -->
+    <div class="section">
+      <h2>About Me</h2>
+      <p>
+        I am a researcher with a background in biotechnology, microbiology, and molecular biology.
+        My experience includes laboratory work, assay optimization, data interpretation, and
+        collaboration on research projects. I am broadly interested in diagnostics, infection
+        biology, nanomedicine, and translational research, and I am actively seeking a fully
+        funded PhD position where I can contribute to impactful scientific work.
+      </p>
+    </div>
+
+    <!-- EDUCATION -->
+    <div class="section">
+      <h2>Education</h2>
+      <div class="education-item">
+        <strong>M.Sc. Biotechnology</strong>
+        <span class="pill">GPA: 16.97/20 (≈3.7/4)</span>
+      </div>
+
+      <div class="education-item">
+        <strong>B.Sc. Cellular & Molecular Biology – Microbiology</strong>
+        <span class="pill">GPA: 16.43/20 (≈3.6/4)</span>
+      </div>
+    </div>
+
+    <!-- PUBLICATIONS -->
+    <div class="section">
+      <h2>Selected Publications</h2>
+
+      <div class="pub-item">
+        <strong>PLGA Nanoparticles as Drug Delivery Systems in Leishmaniasis Chemotherapy</strong>
+        <div class="pub-meta">A. Valiallahi et al., <em>Current Medicinal Chemistry</em>, 2024</div>
+        <div class="pub-link">
+          <a href="https://doi.org/10.2174/0929867331666230823094737" target="_blank">View article</a>
+        </div>
+      </div>
+
+      <div class="pub-item">
+        <strong>Optimization for Rapid Detection of <em>E. coli</em> O157:H7 Using Real-Time LAMP</strong>
+        <div class="pub-meta">A. Valiallahi et al., <em>Research in Molecular Medicine</em>, 2022</div>
+        <div class="pub-link">
+          <a href="https://doi.org/10.32598/rmm.10.2.903.8" target="_blank">View article</a>
+        </div>
+      </div>
+
+      <div class="pub-item">
+        <strong>Rapid Detection of <em>E. coli</em> O157:H7 Using Multiplex PCR</strong>
+        <div class="pub-meta">A. Valiallahi et al., <em>Chulalongkorn Medical Journal</em>, 2022</div>
+        <div class="pub-link">
+          <a href="https://www.researchgate.net/publication/366030059_Rapid_Detection_of_Escherichia_coli_O157H7_Using_Multiplex_PCR" target="_blank">View article</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="footer">
+      Last updated 2025 &nbsp;•&nbsp; Academic portfolio for PhD applications.
+    </div>
+
   </div>
 </body>
 </html>
