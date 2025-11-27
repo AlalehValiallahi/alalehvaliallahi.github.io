@@ -1,152 +1,393 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>Alaleh Valiallahi - Academic CV</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta charset="UTF-8" />
+  <title>Alaleh Valiallahi - Prospective PhD Student</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
   <style>
+    :root {
+      --bg: #f3f4f6;
+      --card-bg: #ffffff;
+      --accent: #2563eb;
+      --accent-soft: #dbeafe;
+      --text-main: #111827;
+      --text-muted: #6b7280;
+      --border-soft: #e5e7eb;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
     body {
-      font-family: Arial, sans-serif;
-      max-width: 900px;
-      margin: 40px auto;
-      padding: 0 15px;
+      margin: 0;
+      padding: 0;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", system-ui,
+        sans-serif;
+      background: var(--bg);
+      color: var(--text-main);
       line-height: 1.6;
     }
-    h1, h2, h3 {
-      color: #222;
+
+    .page {
+      max-width: 960px;
+      margin: 40px auto;
+      padding: 0 16px;
     }
+
+    .card {
+      background: var(--card-bg);
+      border-radius: 16px;
+      box-shadow: 0 18px 45px rgba(15, 23, 42, 0.08);
+      padding: 32px 24px 28px;
+      border: 1px solid var(--border-soft);
+    }
+
+    @media (min-width: 768px) {
+      .card {
+        padding: 40px 40px 32px;
+      }
+    }
+
     .name {
       text-align: center;
-      margin-bottom: 5px;
+      font-size: 1.9rem;
+      font-weight: 700;
+      letter-spacing: 0.02em;
+      margin: 0 0 4px;
     }
+
     .subtitle {
       text-align: center;
-      color: #555;
-      margin-bottom: 15px;
+      font-size: 1rem;
+      color: var(--text-muted);
+      margin-bottom: 14px;
     }
-    .contact {
-      text-align: center;
+
+    .contact-row {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 8px 18px;
       font-size: 0.95rem;
-      color: #555;
-      margin-bottom: 30px;
+      color: var(--text-muted);
+      margin-bottom: 24px;
     }
-    .section {
-      margin-bottom: 30px;
-    }
-    .pub-item {
-      margin-bottom: 10px;
-    }
-    .pub-title {
-      font-weight: bold;
-    }
-    .tag {
-      display: inline-block;
-      padding: 2px 6px;
-      border-radius: 4px;
-      border: 1px solid #ccc;
-      font-size: 0.75rem;
-      margin-left: 6px;
-    }
-    a {
-      color: #0069c0;
+
+    .contact-row a {
+      color: var(--accent);
       text-decoration: none;
+      font-weight: 500;
     }
-    a:hover {
+
+    .contact-row a:hover {
       text-decoration: underline;
     }
+
+    .icon-links {
+      display: flex;
+      gap: 10px;
+      align-items: center;
+      justify-content: center;
+      flex-wrap: wrap;
+      margin-top: 4px;
+    }
+
+    .icon-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 4px 10px;
+      border-radius: 999px;
+      background: var(--accent-soft);
+      color: var(--accent);
+      font-size: 0.8rem;
+      font-weight: 600;
+      text-decoration: none;
+      border: 1px solid #bfdbfe;
+      transition: transform 0.1s ease, box-shadow 0.1s ease,
+        background-color 0.1s ease;
+    }
+
+    .icon-badge span.icon-circle {
+      width: 18px;
+      height: 18px;
+      border-radius: 999px;
+      background: var(--accent);
+      color: white;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 0.7rem;
+    }
+
+    .icon-badge:hover {
+      transform: translateY(-1px);
+      box-shadow: 0 8px 20px rgba(37, 99, 235, 0.27);
+      background-color: #eff6ff;
+      text-decoration: none;
+    }
+
     hr {
-      margin: 25px 0;
+      border: none;
+      border-top: 1px solid var(--border-soft);
+      margin: 24px 0 28px;
+    }
+
+    .section {
+      margin-bottom: 26px;
+    }
+
+    .section:last-of-type {
+      margin-bottom: 0;
+    }
+
+    .section h2 {
+      font-size: 1.15rem;
+      margin: 0 0 10px;
+      color: #111827;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .section h2::before {
+      content: "";
+      width: 4px;
+      height: 18px;
+      border-radius: 999px;
+      background: var(--accent);
+      display: inline-block;
+    }
+
+    .section p {
+      margin: 0;
+      font-size: 0.97rem;
+      color: #374151;
+    }
+
+    ul {
+      margin: 6px 0 0;
+      padding-left: 18px;
+      font-size: 0.95rem;
+      color: #374151;
+    }
+
+    .education-item {
+      margin-bottom: 8px;
+    }
+
+    .education-item strong {
+      font-weight: 600;
+    }
+
+    .pill {
+      display: inline-flex;
+      align-items: center;
+      padding: 1px 7px;
+      border-radius: 999px;
+      border: 1px solid var(--border-soft);
+      font-size: 0.7rem;
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+      margin-left: 6px;
+      color: #374151;
+      background: #f9fafb;
+    }
+
+    .pub-list {
+      list-style: none;
+      padding-left: 0;
+      margin: 0;
+    }
+
+    .pub-item {
+      margin-bottom: 14px;
+      padding-bottom: 10px;
+      border-bottom: 1px dashed var(--border-soft);
+    }
+
+    .pub-item:last-child {
+      border-bottom: none;
+      padding-bottom: 0;
+    }
+
+    .pub-title {
+      font-weight: 600;
+      font-size: 0.97rem;
+      margin-bottom: 2px;
+    }
+
+    .pub-meta {
+      font-size: 0.86rem;
+      color: var(--text-muted);
+      font-style: italic;
+      margin-bottom: 2px;
+    }
+
+    .pub-link a {
+      font-size: 0.86rem;
+      color: var(--accent);
+      text-decoration: none;
+      font-weight: 500;
+    }
+
+    .pub-link a:hover {
+      text-decoration: underline;
+    }
+
+    .note {
+      font-size: 0.85rem;
+      color: var(--text-muted);
+      margin-top: 4px;
+    }
+
+    .footer-note {
+      margin-top: 20px;
+      font-size: 0.8rem;
+      color: var(--text-muted);
+      text-align: center;
     }
   </style>
 </head>
 <body>
+  <div class="page">
+    <div class="card">
+      <h1 class="name">Alaleh Valiallahi</h1>
+      <div class="subtitle">Prospective PhD Student</div>
 
-  <h1 class="name">Alaleh Valiallahi</h1>
-  <div class="subtitle">Prospective PhD Student in Microbiology / Antimicrobial Resistance</div>
-  <div class="contact">
-    Email: <a href="mailto:your.email@example.com">your.email@example.com</a> ·
-    Location: Tehran, Iran
-  </div>
-
-  <hr>
-
-  <div class="section">
-    <h2>About Me</h2>
-    <p>
-      I am a microbiologist with research experience in bacterial infections and antimicrobial resistance.
-      My interests include mechanisms of antibiotic resistance, biofilm-related infections, and the development
-      of new strategies to combat multidrug-resistant pathogens. I am currently seeking a fully funded PhD
-      position in microbiology / infection and immunity / antimicrobial resistance.
-    </p>
-  </div>
-
-  <div class="section">
-    <h2>Education</h2>
-    <ul>
-      <li><strong>MSc in Microbiology</strong>, University of &mdash; , Tehran, Iran</li>
-      <li><strong>BSc in Microbiology</strong>, University of &mdash; , Tehran, Iran</li>
-    </ul>
-  </div>
-
-  <div class="section">
-    <h2>Publications</h2>
-
-    <div class="pub-item">
-      <div class="pub-title">
-        1. Title of your first Q2 paper
-        <span class="tag">Q2</span>
+      <div class="contact-row">
+        <div>
+          Email:
+          <a href="mailto:avaliallahi92@gmail.com">avaliallahi92@gmail.com</a>
+        </div>
+        <div>Location: Tehran, Iran</div>
       </div>
-      <div>
-        <em>First Author: A. Valiallahi</em> · Journal Name, Year  
-        <br>
-        <a href="https://doi.org/xxxxxx" target="_blank">View article</a> <!-- لینک DOI یا مقاله -->
+
+      <div class="icon-links">
+        <a
+          class="icon-badge"
+          href="https://scholar.google.com/citations?user=L6U-OsQAAAAJ&hl=en"
+          target="_blank"
+          rel="noopener"
+        >
+          <span class="icon-circle">GS</span>
+          <span>Google Scholar</span>
+        </a>
+
+        <a
+          class="icon-badge"
+          href="https://www.linkedin.com/in/alaleh-v-971b29b6/?originalSubdomain=ir"
+          target="_blank"
+          rel="noopener"
+        >
+          <span class="icon-circle">in</span>
+          <span>LinkedIn</span>
+        </a>
+      </div>
+
+      <hr />
+
+      <!-- ABOUT ME -->
+      <div class="section">
+        <h2>About Me</h2>
+        <p>
+          I am a researcher with a background in biotechnology, microbiology,
+          and molecular biology. My experience spans laboratory work, method
+          development, and data interpretation across different areas of life
+          sciences. I am broadly interested in translational research at the
+          interface of biology, technology, and human health, including topics
+          such as diagnostics, nanomedicine, and infectious diseases. I am
+          currently exploring opportunities for a fully funded PhD position
+          where I can contribute to collaborative, research-driven projects and
+          continue to grow as an independent scientist.
+        </p>
+      </div>
+
+      <!-- EDUCATION -->
+      <div class="section">
+        <h2>Education</h2>
+        <div class="education-item">
+          <strong>M.Sc. Biotechnology</strong>
+          <span class="pill">GPA: 16.97 / 20 (≈3.7 / 4)</span>
+        </div>
+        <div class="education-item">
+          <strong>B.Sc. Cellular &amp; Molecular Biology – Microbiology</strong>
+          <span class="pill">GPA: 16.43 / 20 (≈3.6 / 4)</span>
+        </div>
+      </div>
+
+      <!-- PUBLICATIONS -->
+      <div class="section">
+        <h2>Selected Publications</h2>
+        <ul class="pub-list">
+          <li class="pub-item">
+            <div class="pub-title">
+              PLGA Nanoparticles as Drug Delivery Systems in Leishmaniasis
+              Chemotherapy
+            </div>
+            <div class="pub-meta">
+              A. Valiallahi et al., <em>Current Medicinal Chemistry</em>, 2024
+              (nanomedicine, drug delivery)
+            </div>
+            <div class="pub-link">
+              <a
+                href="https://doi.org/10.2174/0929867331666230823094737"
+                target="_blank"
+                rel="noopener"
+                >View article</a
+              >
+            </div>
+          </li>
+
+          <li class="pub-item">
+            <div class="pub-title">
+              Optimization for Rapid Detection of <em>E. coli</em> O157:H7
+              Using Real-Time LAMP
+            </div>
+            <div class="pub-meta">
+              A. Valiallahi et al., <em>Research in Molecular Medicine</em>,
+              2022 (molecular diagnostics, rapid AMR-related detection)
+            </div>
+            <div class="pub-link">
+              <a
+                href="https://doi.org/10.32598/rmm.10.2.903.8"
+                target="_blank"
+                rel="noopener"
+                >View article</a
+              >
+            </div>
+          </li>
+
+          <li class="pub-item">
+            <div class="pub-title">
+              Rapid Detection of <em>E. coli</em> O157:H7 Using Multiplex PCR
+            </div>
+            <div class="pub-meta">
+              A. Valiallahi et al., <em>Chulalongkorn Medical Journal</em>, 2022
+              (PCR diagnostics)
+            </div>
+            <div class="pub-link">
+              <a
+                href="https://www.researchgate.net/publication/366030059_Rapid_Detection_of_Escherichia_coli_O157H7_Using_Multiplex_PCR"
+                target="_blank"
+                rel="noopener"
+                >View article</a
+              >
+            </div>
+          </li>
+        </ul>
+        <div class="note">
+          A full list of publications, conference presentations, and teaching
+          experience is available in my CV upon request.
+        </div>
+      </div>
+
+      <div class="footer-note">
+        Last updated: 2025 &nbsp;|&nbsp; This page is intended for graduate and
+        PhD application purposes.
       </div>
     </div>
-
-    <div class="pub-item">
-      <div class="pub-title">
-        2. Title of your second article
-      </div>
-      <div>
-        Author list · Journal Name, Year  
-        <br>
-        <a href="https://..." target="_blank">View article</a>
-      </div>
-    </div>
-
-    <!-- می‌توانی به همین شکل مقالات دیگر را اضافه کنی -->
-
   </div>
-
-  <div class="section">
-    <h2>Research Interests</h2>
-    <ul>
-      <li>Antimicrobial resistance in clinical bacterial pathogens</li>
-      <li>Biofilm-associated infections</li>
-      <li>Novel antimicrobial strategies and drug combinations</li>
-      <li>Rapid detection methods for resistant bacteria</li>
-    </ul>
-  </div>
-
-  <div class="section">
-    <h2>Research Experience</h2>
-    <ul>
-      <li>
-        <strong>Master’s thesis:</strong> Short description of your thesis topic related to antibiotic-resistant bacteria.
-      </li>
-      <li>
-        <strong>Laboratory experience:</strong> Bacterial culture, antibiotic susceptibility testing, MIC determination,
-        biofilm assays, and basic molecular techniques.
-      </li>
-    </ul>
-  </div>
-
-  <div class="section">
-    <h2>Contact</h2>
-    <p>
-      For collaboration or PhD opportunities, please feel free to contact me by email.
-    </p>
-  </div>
-
 </body>
 </html>
