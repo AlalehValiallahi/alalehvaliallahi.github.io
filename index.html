@@ -7,26 +7,70 @@
 
   <style>
     :root {
-      --accent: #2563eb;
-      --accent-light: #dbeafe;
-      --text-main: #0f172a;
-      --text-muted: #64748b;
       --bg: #f8fafc;
       --card-bg: #ffffff;
+      --accent: #2563eb;
+      --accent-soft: #dbeafe;
+      --text-main: #0f172a;
+      --text-muted: #64748b;
+      --border-soft: #e2e8f0;
+    }
+
+    body.dark {
+      --bg: #020617;
+      --card-bg: #020617;
+      --accent: #60a5fa;
+      --accent-soft: #1e293b;
+      --text-main: #e5e7eb;
+      --text-muted: #9ca3af;
+      --border-soft: #1f2937;
+    }
+
+    * {
+      box-sizing: border-box;
     }
 
     body {
       margin: 0;
-      font-family: "Inter", -apple-system, BlinkMacSystemFont, sans-serif;
-      background: var(--bg);
+      font-family: "Inter", -apple-system, BlinkMacSystemFont, system-ui, sans-serif;
+      background: radial-gradient(circle at top left, #e0f2fe 0, var(--bg) 40%, #e5e7eb 100%);
       color: var(--text-main);
       line-height: 1.6;
+      transition: background 0.3s ease, color 0.3s ease;
+    }
+
+    body.dark {
+      background: radial-gradient(circle at top left, #0f172a 0, #020617 40%, #020617 100%);
     }
 
     .container {
       max-width: 1050px;
-      margin: auto;
-      padding: 20px;
+      margin: 0 auto;
+      padding: 16px 20px 32px;
+    }
+
+    /* THEME TOGGLE */
+    .top-bar {
+      display: flex;
+      justify-content: flex-end;
+      margin-bottom: 12px;
+    }
+
+    #theme-toggle {
+      border: 1px solid var(--border-soft);
+      background: rgba(255,255,255,0.7);
+      padding: 6px 11px;
+      border-radius: 999px;
+      font-size: 0.8rem;
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      color: var(--text-main);
+      backdrop-filter: blur(6px);
+    }
+    body.dark #theme-toggle {
+      background: rgba(15,23,42,0.9);
     }
 
     /* HERO */
@@ -35,61 +79,82 @@
       flex-direction: column-reverse;
       gap: 20px;
       background: var(--card-bg);
-      padding: 30px;
-      border-radius: 18px;
-      box-shadow: 0 18px 45px rgba(15, 23, 42, 0.08);
-      border: 1px solid #e2e8f0;
+      padding: 26px 22px;
+      border-radius: 20px;
+      box-shadow: 0 18px 45px rgba(15, 23, 42, 0.16);
+      border: 1px solid rgba(148, 163, 184, 0.4);
     }
 
     @media (min-width: 850px) {
-      .hero { flex-direction: row; align-items: center; }
+      .hero {
+        flex-direction: row;
+        align-items: center;
+      }
     }
 
-    .hero-text { flex: 1.1; }
+    .hero-text {
+      flex: 1.1;
+    }
 
     .hero-name {
-      font-size: 2.1rem;
+      font-size: 2.05rem;
       font-weight: 800;
+      letter-spacing: 0.02em;
+      margin-bottom: 4px;
     }
 
     .hero-title {
+      font-size: 1.02rem;
       color: var(--text-muted);
-      font-size: 1.05rem;
-      margin-bottom: 14px;
-    }
-
-    .hero-p {
-      font-size: 0.98rem;
-      color: #334155;
-      margin-bottom: 20px;
-    }
-
-    .hero-img-wrap { flex: 1; display: flex; justify-content: center; }
-
-    .hero-img {
-      width: 260px;
-      height: 260px;
-      border-radius: 16px;
-      object-fit: cover;
-      box-shadow: 0 14px 35px rgba(0, 0, 0, 0.18);
-      border: 3px solid #ffffff;
+      margin-bottom: 13px;
     }
 
     .contact-row {
-      font-size: 0.95rem;
-      margin-bottom: 12px;
+      font-size: 0.93rem;
+      margin-bottom: 10px;
     }
 
     .contact-row a {
       color: var(--accent);
       text-decoration: none;
+      font-weight: 500;
+    }
+
+    .hero-p {
+      font-size: 0.96rem;
+      color: #334155;
+      margin-top: 6px;
+      margin-bottom: 12px;
+    }
+    body.dark .hero-p {
+      color: #cbd5f5;
+    }
+
+    .highlight-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-top: 8px;
+    }
+
+    .highlight-pill {
+      font-size: 0.78rem;
+      padding: 4px 9px;
+      border-radius: 999px;
+      border: 1px solid var(--border-soft);
+      background: var(--accent-soft);
+      color: #1d4ed8;
+      font-weight: 600;
+    }
+    body.dark .highlight-pill {
+      color: #bfdbfe;
     }
 
     .icon-links {
       display: flex;
-      gap: 12px;
+      gap: 10px;
       flex-wrap: wrap;
-      margin-top: 8px;
+      margin-top: 12px;
     }
 
     .icon-badge {
@@ -98,11 +163,12 @@
       gap: 6px;
       padding: 5px 12px;
       border-radius: 999px;
-      background: var(--accent-light);
+      background: var(--accent-soft);
       color: var(--accent);
       font-size: 0.8rem;
       font-weight: 600;
       border: 1px solid #bfdbfe;
+      text-decoration: none;
     }
 
     .icon-circle {
@@ -111,26 +177,41 @@
       border-radius: 999px;
       background: var(--accent);
       color: white;
-      font-size: 0.7rem;
       display: flex;
       align-items: center;
       justify-content: center;
+      font-size: 0.7rem;
+    }
+
+    .hero-img-wrap {
+      flex: 1;
+      display: flex;
+      justify-content: center;
+    }
+
+    .hero-img {
+      width: 260px;
+      height: 260px;
+      border-radius: 22px;
+      object-fit: cover;
+      box-shadow: 0 16px 45px rgba(15, 23, 42, 0.4);
+      border: 3px solid rgba(248, 250, 252, 0.9);
     }
 
     /* SECTIONS */
     .section {
-      margin-top: 45px;
+      margin-top: 34px;
       background: var(--card-bg);
-      padding: 28px;
+      padding: 24px;
       border-radius: 18px;
-      box-shadow: 0 14px 40px rgba(15, 23, 42, 0.06);
-      border: 1px solid #e2e8f0;
+      box-shadow: 0 14px 40px rgba(15, 23, 42, 0.10);
+      border: 1px solid rgba(148, 163, 184, 0.3);
     }
 
     .section h2 {
-      font-size: 1.2rem;
-      margin-bottom: 10px;
-      display: flex;
+      font-size: 1.18rem;
+      margin-bottom: 9px;
+      display: inline-flex;
       align-items: center;
       gap: 8px;
     }
@@ -143,96 +224,174 @@
       background: var(--accent);
     }
 
-    .pill {
-      background: #f1f5f9;
-      padding: 2px 8px;
-      font-size: 0.75rem;
-      border-radius: 6px;
-      border: 1px solid #e2e8f0;
-      margin-left: 6px;
+    .section p {
+      font-size: 0.95rem;
+      color: #334155;
+      margin: 0;
+    }
+    body.dark .section p {
+      color: #d1d5db;
     }
 
-    .pub-meta { color: var(--text-muted); font-size: 0.86rem; }
+    .section ul {
+      margin: 6px 0 0;
+      padding-left: 18px;
+      font-size: 0.95rem;
+      color: #334155;
+    }
+    body.dark .section ul {
+      color: #d1d5db;
+    }
 
-    .pub-link a { color: var(--accent); text-decoration: none; }
+    .education-item {
+      margin-bottom: 10px;
+    }
 
-    .roshd-button {
-      margin-top: 25px;
+    .pill {
       display: inline-flex;
       align-items: center;
-      gap: 10px;
-      padding: 12px 16px;
-      background: #2563eb;
+      padding: 2px 8px;
+      border-radius: 6px;
+      background: #f1f5f9;
+      border: 1px solid #e2e8f0;
+      font-size: 0.75rem;
+      margin-left: 6px;
+    }
+    body.dark .pill {
+      background: #020617;
+      border-color: #1f2937;
+      color: #e5e7eb;
+    }
+
+    .thesis-chip {
+      padding: 4px 10px;
+      border-radius: 999px;
+      background: var(--accent);
       color: white;
-      border-radius: 10px;
+      font-size: 0.78rem;
+      text-decoration: none;
+      font-weight: 600;
+      box-shadow: 0 4px 12px rgba(37, 99, 235, 0.35);
+    }
+
+    .pub-item {
+      margin-bottom: 14px;
+    }
+
+    .pub-meta {
+      font-size: 0.86rem;
+      color: var(--text-muted);
+    }
+
+    .pub-link a {
+      color: var(--accent);
+      font-size: 0.86rem;
+      text-decoration: none;
+    }
+
+    .action-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-top: 18px;
+    }
+
+    .roshd-button {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 10px 16px;
+      background: var(--accent);
+      color: white;
+      border-radius: 11px;
+      font-size: 0.9rem;
       font-weight: 600;
       text-decoration: none;
-      font-size: 0.93rem;
+      box-shadow: 0 6px 18px rgba(37, 99, 235, 0.38);
     }
 
     .cv-button {
-      margin-top: 18px;
-      padding: 10px 16px;
-      border-radius: 10px;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 9px 15px;
+      border-radius: 11px;
       border: 1px solid var(--accent);
-      background: white;
+      background: transparent;
       color: var(--accent);
+      font-size: 0.9rem;
       font-weight: 600;
       text-decoration: none;
-    }
-
-    /* UL lists */
-    .section ul {
-      padding-left: 18px;
-      color: #334155;
-      font-size: 0.95rem;
     }
 
     .footer {
       text-align: center;
       font-size: 0.8rem;
       color: var(--text-muted);
-      margin-top: 50px;
-      margin-bottom: 20px;
+      margin-top: 32px;
     }
   </style>
 </head>
 
 <body>
   <div class="container">
+    <div class="top-bar">
+      <button id="theme-toggle">🌙 Night mode</button>
+    </div>
 
     <!-- HERO -->
     <div class="hero">
       <div class="hero-text">
         <div class="hero-name">Alaleh Valiallahi</div>
-        <div class="hero-title">Prospective PhD Student</div>
+        <div class="hero-title">Prospective PhD Student · Curious, research-driven, and creative</div>
 
         <div class="contact-row">
           Email:
           <a href="mailto:avaliallahi92@gmail.com">avaliallahi92@gmail.com</a>
-          &nbsp;·&nbsp; Tehran, Iran
+          &nbsp;·&nbsp; Based in Tehran, Iran
         </div>
 
         <p class="hero-p">
-          Motivated research-oriented applicant with hands-on wet-lab experience,
-          strong academic performance, and a growing publication record. Interested
-          in research at the interface of microbiology, diagnostics, nanomedicine, 
-          and human health.
+          I am a motivated and detail-oriented researcher with a strong academic record and experience
+          across microbiology, biotechnology, and molecular biology. I enjoy connecting experimental work,
+          scientific writing, and science communication, and I am looking for a PhD environment where I can
+          grow as an independent scientist and contribute to collaborative, high-impact projects.
         </p>
 
+        <div class="highlight-row">
+          <span class="highlight-pill">Top-ranked M.Sc. student (excellent standing)</span>
+          <span class="highlight-pill">NCBI gene record contributor</span>
+          <span class="highlight-pill">First-author Q2 journal review</span>
+          <span class="highlight-pill">Science communication for 13M+ readers</span>
+        </div>
+
         <div class="icon-links">
-          <a class="icon-badge" href="https://scholar.google.com/citations?user=L6U-OsQAAAAJ&hl=en" target="_blank">
-            <span class="icon-circle">GS</span> Google Scholar
+          <a
+            class="icon-badge"
+            href="https://scholar.google.com/citations?user=L6U-OsQAAAAJ&hl=en"
+            target="_blank"
+          >
+            <span class="icon-circle">GS</span>
+            <span>Google Scholar</span>
           </a>
 
-          <a class="icon-badge" href="https://www.linkedin.com/in/alaleh-v-971b29b6/" target="_blank">
-            <span class="icon-circle">in</span> LinkedIn
+          <a
+            class="icon-badge"
+            href="https://www.linkedin.com/in/alaleh-v-971b29b6/"
+            target="_blank"
+          >
+            <span class="icon-circle">in</span>
+            <span>LinkedIn</span>
           </a>
         </div>
       </div>
 
       <div class="hero-img-wrap">
-        <img src="Screenshot 2025-11-27 131605.png" class="hero-img" alt="Lab image" />
+        <img
+          src="Screenshot 2025-11-27 131605.png"
+          alt="Colorful microbiology plates"
+          class="hero-img"
+        />
       </div>
     </div>
 
@@ -240,21 +399,24 @@
     <div class="section">
       <h2>About Me</h2>
       <p>
-        I am a researcher with a background in biotechnology, microbiology, and molecular biology.
-        I am broadly interested in diagnostics, infection biology, antimicrobial strategies,
-        and translational research. I am actively seeking a fully funded PhD position.
+        I have a broad background in life sciences, spanning microbiology, biotechnology, and molecular
+        biology. My experience includes experimental work in the lab, data interpretation, and scientific
+        writing, as well as communicating complex topics to non-specialist audiences. I am especially
+        interested in interdisciplinary projects that link biological mechanisms to real-world applications
+        in human health. My goal is to build a long-term research career, not only collecting degrees, but
+        contributing to meaningful, collaborative science.
       </p>
     </div>
 
-    <!-- RESEARCH INTERESTS -->
+    <!-- RESEARCH INTERESTS (broad, بدون تکنیک خاص مثل PCR/LAMP) -->
     <div class="section">
       <h2>Research Interests</h2>
       <ul>
-        <li>Clinically relevant bacterial infections and host–microbe interactions</li>
-        <li>Antimicrobial resistance and advanced anti-infective strategies</li>
-        <li>Rapid and accessible diagnostics (PCR, LAMP, point-of-care)</li>
-        <li>Nanomedicine and smart drug delivery technologies</li>
-        <li>Translational research for improving human and public health</li>
+        <li>Infectious diseases and host–microbe interactions in human health</li>
+        <li>Biotechnology-driven solutions for diagnostics, prevention, and therapy</li>
+        <li>Translational and interdisciplinary life science research</li>
+        <li>Data-informed, mechanism-based approaches to understanding complex biological systems</li>
+        <li>Bridging experimental work, scientific communication, and public engagement</li>
       </ul>
     </div>
 
@@ -262,74 +424,104 @@
     <div class="section">
       <h2>Education</h2>
 
-      <!-- With Thesis Button -->
       <div class="education-item" style="display:flex; align-items:center; flex-wrap:wrap; gap:10px;">
-        <strong>M.Sc. Biotechnology</strong>
-        <span class="pill">GPA: 16.97/20 (≈3.7/4)</span>
-
-        <a 
-          href="thesis.html"
-          style="
-            padding:4px 10px;
-            background:#2563eb;
-            color:white;
-            border-radius:8px;
-            font-size:0.78rem;
-            text-decoration:none;
-            font-weight:600;
-            box-shadow:0 4px 12px rgba(37, 99, 235, 0.25);
-          ">
-          🔬 Thesis Project
-        </a>
+        <strong>M.Sc. in Biotechnology</strong>
+        <span class="pill">GPA: 16.97 / 20 (≈3.7 / 4)</span>
+        <span class="pill">Graduated with excellent standing</span>
+        <a href="thesis.html" class="thesis-chip">🔬 Thesis Project</a>
       </div>
 
-      <div class="education-item" style="margin-top:10px;">
-        <strong>B.Sc. Cellular & Molecular Biology – Microbiology</strong>
-        <span class="pill">GPA: 16.43/20 (≈3.6/4)</span>
+      <div class="education-item">
+        <strong>B.Sc. in Cellular &amp; Molecular Biology – Microbiology</strong>
+        <span class="pill">GPA: 16.43 / 20 (≈3.6 / 4)</span>
       </div>
     </div>
 
-    <!-- PUBLICATIONS -->
+    <!-- PUBLICATIONS (بدون تأکید روی تکنیک در متن توضیح؛ عنوان واقعی حفظ شده) -->
     <div class="section">
       <h2>Selected Publications</h2>
 
       <div class="pub-item">
-        <strong>PLGA Nanoparticles for Drug Delivery in Leishmaniasis</strong>
-        <div class="pub-meta">Current Medicinal Chemistry, 2024</div>
+        <strong>PLGA Nanoparticles as Drug Delivery Systems in Leishmaniasis Chemotherapy</strong>
+        <div class="pub-meta">
+          First-author review · Current Medicinal Chemistry (Q2), 2024
+        </div>
         <div class="pub-link">
-          <a href="https://doi.org/10.2174/0929867331666230823094737" target="_blank">View article</a>
+          <a href="https://doi.org/10.2174/0929867331666230823094737" target="_blank">
+            View article
+          </a>
         </div>
       </div>
 
       <div class="pub-item">
-        <strong>Real-Time LAMP Detection of <em>E. coli</em> O157:H7</strong>
-        <div class="pub-meta">Research in Molecular Medicine, 2022</div>
+        <strong>Optimization for Rapid Detection of <em>E. coli</em> O157:H7 Using Real-Time LAMP</strong>
+        <div class="pub-meta">
+          Research in Molecular Medicine, 2022
+        </div>
         <div class="pub-link">
-          <a href="https://doi.org/10.32598/rmm.10.2.903.8" target="_blank">View article</a>
+          <a href="https://doi.org/10.32598/rmm.10.2.903.8" target="_blank">
+            View article
+          </a>
         </div>
       </div>
 
       <div class="pub-item">
-        <strong>Multiplex PCR Detection of <em>E. coli</em> O157:H7</strong>
-        <div class="pub-meta">Chulalongkorn Medical Journal, 2022</div>
+        <strong>Rapid Detection of <em>E. coli</em> O157:H7 Using Multiplex PCR</strong>
+        <div class="pub-meta">
+          Chulalongkorn Medical Journal, 2022
+        </div>
         <div class="pub-link">
-          <a href="https://www.researchgate.net/publication/366030059" target="_blank">View article</a>
+          <a href="https://www.researchgate.net/publication/366030059" target="_blank">
+            View article
+          </a>
         </div>
       </div>
 
-      <a href="roshd.html" class="roshd-button">
-        📘 Published Articles in Roshd Educational Magazine (13M readership)
-      </a>
+      <div class="action-row">
+        <a href="roshd.html" class="roshd-button">
+          📘 Roshd Magazine Science Articles (13M+ readership)
+        </a>
 
-      <br />
-
-      <a href="Alaleh_Valiallahi_CV.pdf" class="cv-button">📄 Download my full CV</a>
+        <a href="Alaleh_Valiallahi_CV.pdf" class="cv-button">
+          📄 Download my full CV
+        </a>
+      </div>
     </div>
 
     <div class="footer">
-      Last updated 2025 • Academic portfolio for PhD applications.
+      Last updated: 2025 · Academic portfolio for PhD applications.
     </div>
-
   </div>
+
+  <script>
+    (function () {
+      const body = document.body;
+      const toggle = document.getElementById('theme-toggle');
+
+      function applyTheme(theme) {
+        if (theme === 'dark') {
+          body.classList.add('dark');
+          toggle.textContent = '☀ Light mode';
+        } else {
+          body.classList.remove('dark');
+          toggle.textContent = '🌙 Night mode';
+        }
+      }
+
+      const saved = localStorage.getItem('theme');
+      if (saved === 'dark') {
+        applyTheme('dark');
+      } else {
+        applyTheme('light');
+      }
+
+      toggle.addEventListener('click', () => {
+        const isDark = body.classList.toggle('dark');
+        const newTheme = isDark ? 'dark' : 'light';
+        localStorage.setItem('theme', newTheme);
+        applyTheme(newTheme);
+      });
+    })();
+  </script>
 </body>
 </html>
