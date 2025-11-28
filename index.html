@@ -5,33 +5,74 @@
   <title>Alaleh Valiallahi – Prospective PhD Student</title>
   <meta name="viewport" content="width=device-width, initial-scale=1" />
 
+  <!-- SEO & Social Preview -->
+  <meta name="description" content="Academic portfolio of Alaleh Valiallahi – prospective PhD student with research experience in microbiology, biotechnology, and molecular biology." />
+  <meta property="og:title" content="Alaleh Valiallahi – Prospective PhD Student" />
+  <meta property="og:description" content="Research-driven and creative MSc graduate with publications, thesis project, and science communication work." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://alalehvaliallahi.github.io" />
+  <meta property="og:image" content="https://alalehvaliallahi.github.io/Screenshot%202025-11-27%20131605.png" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Alaleh Valiallahi – Prospective PhD Student" />
+  <meta name="twitter:description" content="Academic portfolio for graduate and PhD applications." />
+  <meta name="twitter:image" content="https://alalehvaliallahi.github.io/Screenshot%202025-11-27%20131605.png" />
+
   <style>
-    :root {
-      --bg: #f8fafc;
-      --card-bg: #ffffff;
-      --accent: #2563eb;
-      --accent-soft: #dbeafe;
-      --text-main: #0f172a;
-      --text-muted: #64748b;
-      --border-soft: #e2e8f0;
-    }
-
-    body.dark {
-      --bg: #020617;
-      --card-bg: #020617;
-      --accent: #60a5fa;
-      --accent-soft: #1e293b;
-      --text-main: #e5e7eb;
-      --text-muted: #9ca3af;
-      --border-soft: #1f2937;
-    }
-
     * {
       box-sizing: border-box;
     }
 
     html {
       scroll-behavior: smooth;
+    }
+
+    /* Theming with CSS variables per theme */
+    body[data-theme="light"] {
+      --bg: #f8fafc;
+      --card-bg: rgba(255, 255, 255, 0.78);
+      --accent: #2563eb;
+      --accent-soft: #dbeafe;
+      --text-main: #0f172a;
+      --text-muted: #64748b;
+      --border-soft: #e2e8f0;
+      --shadow-soft: 0 18px 45px rgba(15, 23, 42, 0.16);
+      --glass-border: rgba(148, 163, 184, 0.4);
+    }
+
+    body[data-theme="dark"] {
+      --bg: #020617;
+      --card-bg: rgba(15, 23, 42, 0.88);
+      --accent: #60a5fa;
+      --accent-soft: #1e293b;
+      --text-main: #e5e7eb;
+      --text-muted: #9ca3af;
+      --border-soft: #1f2937;
+      --shadow-soft: 0 18px 45px rgba(15, 23, 42, 0.8);
+      --glass-border: rgba(30, 64, 175, 0.7);
+    }
+
+    body[data-theme="mint"] {
+      --bg: #ecfdf5;
+      --card-bg: rgba(236, 253, 245, 0.88);
+      --accent: #10b981;
+      --accent-soft: #ccfbf1;
+      --text-main: #064e3b;
+      --text-muted: #047857;
+      --border-soft: #a7f3d0;
+      --shadow-soft: 0 18px 45px rgba(16, 185, 129, 0.25);
+      --glass-border: rgba(56, 189, 248, 0.4);
+    }
+
+    body[data-theme="blue"] {
+      --bg: #eff6ff;
+      --card-bg: rgba(239, 246, 255, 0.92);
+      --accent: #1d4ed8;
+      --accent-soft: #dbeafe;
+      --text-main: #0f172a;
+      --text-muted: #475569;
+      --border-soft: #bfdbfe;
+      --shadow-soft: 0 18px 45px rgba(30, 64, 175, 0.3);
+      --glass-border: rgba(129, 140, 248, 0.6);
     }
 
     body {
@@ -43,21 +84,20 @@
       transition: background 0.3s ease, color 0.3s ease;
     }
 
-    body.dark {
-      background: radial-gradient(circle at top left, #0f172a 0, #020617 40%, #020617 100%);
-    }
-
     .container {
       max-width: 1050px;
       margin: 0 auto;
       padding: 16px 20px 32px;
     }
 
-    /* TOP BAR */
+    /* TOP BAR + SECTION NAV */
     .top-bar {
       display: flex;
-      justify-content: flex-end;
-      margin-bottom: 12px;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 10px;
+      gap: 12px;
+      flex-wrap: wrap;
     }
 
     #theme-toggle {
@@ -73,8 +113,25 @@
       color: var(--text-main);
       backdrop-filter: blur(6px);
     }
-    body.dark #theme-toggle {
-      background: rgba(15,23,42,0.9);
+
+    .section-nav {
+      display: flex;
+      gap: 6px;
+      flex-wrap: wrap;
+    }
+
+    .section-nav button {
+      border-radius: 999px;
+      border: 1px solid var(--border-soft);
+      background: rgba(248,250,252,0.8);
+      padding: 5px 10px;
+      font-size: 0.8rem;
+      cursor: pointer;
+      color: var(--text-main);
+    }
+
+    .section-nav button:hover {
+      background: var(--accent-soft);
     }
 
     /* HERO */
@@ -85,8 +142,10 @@
       background: var(--card-bg);
       padding: 26px 22px;
       border-radius: 20px;
-      box-shadow: 0 18px 45px rgba(15, 23, 42, 0.16);
-      border: 1px solid rgba(148, 163, 184, 0.4);
+      box-shadow: var(--shadow-soft);
+      border: 1px solid var(--glass-border);
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
     }
 
     @media (min-width: 850px) {
@@ -110,7 +169,14 @@
     .hero-title {
       font-size: 1.02rem;
       color: var(--text-muted);
-      margin-bottom: 13px;
+      margin-bottom: 4px;
+    }
+
+    .hero-greeting {
+      font-size: 0.9rem;
+      color: var(--text-muted);
+      margin-bottom: 10px;
+      font-style: italic;
     }
 
     .contact-row {
@@ -130,8 +196,13 @@
       margin-top: 6px;
       margin-bottom: 12px;
     }
-    body.dark .hero-p {
+
+    body[data-theme="dark"] .hero-p {
       color: #cbd5f5;
+    }
+
+    body[data-theme="mint"] .hero-p {
+      color: #065f46;
     }
 
     .highlight-row {
@@ -150,8 +221,13 @@
       color: #1d4ed8;
       font-weight: 600;
     }
-    body.dark .highlight-pill {
+
+    body[data-theme="dark"] .highlight-pill {
       color: #bfdbfe;
+    }
+
+    body[data-theme="mint"] .highlight-pill {
+      color: #047857;
     }
 
     .icon-links {
@@ -220,7 +296,9 @@
       padding: 24px;
       border-radius: 18px;
       box-shadow: 0 14px 40px rgba(15, 23, 42, 0.10);
-      border: 1px solid rgba(148, 163, 184, 0.3);
+      border: 1px solid var(--glass-border);
+      backdrop-filter: blur(14px);
+      -webkit-backdrop-filter: blur(14px);
     }
 
     .section h2 {
@@ -244,8 +322,13 @@
       color: #334155;
       margin: 0;
     }
-    body.dark .section p {
+
+    body[data-theme="dark"] .section p {
       color: #d1d5db;
+    }
+
+    body[data-theme="mint"] .section p {
+      color: #064e3b;
     }
 
     .section ul {
@@ -254,8 +337,13 @@
       font-size: 0.95rem;
       color: #334155;
     }
-    body.dark .section ul {
+
+    body[data-theme="dark"] .section ul {
       color: #d1d5db;
+    }
+
+    body[data-theme="mint"] .section ul {
+      color: #065f46;
     }
 
     .education-item {
@@ -272,10 +360,17 @@
       font-size: 0.75rem;
       margin-left: 6px;
     }
-    body.dark .pill {
+
+    body[data-theme="dark"] .pill {
       background: #020617;
       border-color: #1f2937;
       color: #e5e7eb;
+    }
+
+    body[data-theme="mint"] .pill {
+      background: #ecfdf5;
+      border-color: #a7f3d0;
+      color: #065f46;
     }
 
     .thesis-chip {
@@ -302,6 +397,16 @@
       color: var(--accent);
       font-size: 0.86rem;
       text-decoration: none;
+    }
+
+    /* DOI highlight */
+    a.doi-link {
+      border-bottom: 1px dashed var(--accent);
+      padding-bottom: 1px;
+    }
+
+    a.doi-link:hover {
+      background: var(--accent-soft);
     }
 
     .action-row {
@@ -359,10 +464,55 @@
       margin-top: 32px;
     }
 
-    /* BACK TO TOP BUTTON */
-    #back-to-top {
+    #visit-counter {
+      display: block;
+      margin-top: 6px;
+      font-size: 0.78rem;
+      color: var(--text-muted);
+    }
+
+    /* Floating Social Bar */
+    .social-bar {
       position: fixed;
-      right: 20px;
+      top: 50%;
+      left: 16px;
+      transform: translateY(-50%);
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+      z-index: 20;
+    }
+
+    .social-bar a {
+      width: 32px;
+      height: 32px;
+      border-radius: 999px;
+      background: rgba(15,23,42,0.8);
+      color: #e5e7eb;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 0.75rem;
+      text-decoration: none;
+      box-shadow: 0 8px 18px rgba(15,23,42,0.6);
+    }
+
+    body[data-theme="light"] .social-bar a {
+      background: rgba(255,255,255,0.95);
+      color: var(--accent);
+      border: 1px solid var(--border-soft);
+    }
+
+    @media (max-width: 700px) {
+      .social-bar {
+        display: none;
+      }
+    }
+
+    /* FAB Buttons (Back to top & contact) */
+    #back-to-top,
+    #contact-fab {
+      position: fixed;
       bottom: 22px;
       width: 38px;
       height: 38px;
@@ -382,31 +532,69 @@
       z-index: 30;
     }
 
-    #back-to-top.visible {
+    #back-to-top.visible,
+    #contact-fab.visible {
       opacity: 1;
       pointer-events: auto;
       transform: translateY(0);
     }
 
-    #back-to-top:hover {
+    #back-to-top {
+      right: 20px;
+    }
+
+    #contact-fab {
+      right: 70px;
+    }
+
+    #back-to-top:hover,
+    #contact-fab:hover {
       background: var(--accent);
       color: #f9fafb;
       transform: translateY(-2px);
     }
+
+    /* AOS */
+    .aos {
+      opacity: 0;
+      transform: translateY(18px);
+      transition: opacity 0.4s ease-out, transform 0.4s ease-out;
+    }
+
+    .aos-visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /* Small responsiveness */
+    @media (max-width: 850px) {
+      .hero {
+        padding: 20px 16px;
+      }
+    }
   </style>
 </head>
 
-<body>
+<body data-theme="light">
   <div class="container">
+    <!-- Top bar with theme + nav -->
     <div class="top-bar">
-      <button id="theme-toggle">🌙 Night mode</button>
+      <div class="section-nav">
+        <button data-target="top">Top</button>
+        <button data-target="about">About</button>
+        <button data-target="research">Research</button>
+        <button data-target="education">Education</button>
+        <button data-target="publications">Publications</button>
+      </div>
+      <button id="theme-toggle">☀ Theme: Light</button>
     </div>
 
     <!-- HERO -->
-    <div class="hero">
+    <div id="top" class="hero aos">
       <div class="hero-text">
         <div class="hero-name">Alaleh Valiallahi</div>
         <div class="hero-title">Prospective PhD Student · Curious, research-driven, and creative</div>
+        <div id="greeting" class="hero-greeting"></div>
 
         <div class="contact-row">
           Email:
@@ -459,7 +647,7 @@
     </div>
 
     <!-- ABOUT -->
-    <div class="section">
+    <div id="about" class="section aos">
       <h2>About Me</h2>
       <p>
         I have a broad background in life sciences, spanning microbiology, biotechnology, and molecular
@@ -475,7 +663,7 @@
     </div>
 
     <!-- RESEARCH INTERESTS -->
-    <div class="section">
+    <div id="research" class="section aos">
       <h2>Research Interests</h2>
       <ul>
         <li>Infectious diseases and host–microbe interactions in human health</li>
@@ -487,7 +675,7 @@
     </div>
 
     <!-- EDUCATION -->
-    <div class="section">
+    <div id="education" class="section aos">
       <h2>Education</h2>
 
       <div class="education-item" style="display:flex; align-items:center; flex-wrap:wrap; gap:10px;">
@@ -504,7 +692,7 @@
     </div>
 
     <!-- PUBLICATIONS -->
-    <div class="section">
+    <div id="publications" class="section aos">
       <h2>Selected Publications</h2>
 
       <div class="pub-item">
@@ -532,80 +720,4 @@
       </div>
 
       <div class="pub-item">
-        <strong>Rapid Detection of <em>E. coli</em> O157:H7 Using Multiplex PCR</strong>
-        <div class="pub-meta">
-          Chulalongkorn Medical Journal, 2022
-        </div>
-        <div class="pub-link">
-          <a href="https://www.researchgate.net/publication/366030059" target="_blank">
-            View article
-          </a>
-        </div>
-      </div>
-
-      <div class="action-row">
-        <a href="roshd.html" class="roshd-button">
-          📘 Roshd Magazine Science Articles
-          <span class="arrow">→</span>
-        </a>
-
-        <a href="Alaleh_Valiallahi_CV.pdf" class="cv-button">
-          📄 Download my full CV
-        </a>
-      </div>
-    </div>
-
-    <div class="footer">
-      Last updated: 2025 · Academic portfolio for PhD applications.
-    </div>
-  </div>
-
-  <!-- BACK TO TOP BUTTON -->
-  <button id="back-to-top" aria-label="Back to top">↑</button>
-
-  <script>
-    (function () {
-      const body = document.body;
-      const toggle = document.getElementById('theme-toggle');
-      const backToTop = document.getElementById('back-to-top');
-
-      function applyTheme(theme) {
-        if (theme === 'dark') {
-          body.classList.add('dark');
-          toggle.textContent = '☀ Light mode';
-        } else {
-          body.classList.remove('dark');
-          toggle.textContent = '🌙 Night mode';
-        }
-      }
-
-      const saved = localStorage.getItem('theme');
-      if (saved === 'dark') {
-        applyTheme('dark');
-      } else {
-        applyTheme('light');
-      }
-
-      toggle.addEventListener('click', () => {
-        const isDark = body.classList.toggle('dark');
-        const newTheme = isDark ? 'dark' : 'light';
-        localStorage.setItem('theme', newTheme);
-        applyTheme(newTheme);
-      });
-
-      // back-to-top visibility
-      window.addEventListener('scroll', () => {
-        if (window.scrollY > 400) {
-          backToTop.classList.add('visible');
-        } else {
-          backToTop.classList.remove('visible');
-        }
-      });
-
-      backToTop.addEventListener('click', () => {
-        window.scrollTo({ top: 0, behavior: 'smooth' });
-      });
-    })();
-  </script>
-</body>
-</html>
+        <strong>Rapid Detection
