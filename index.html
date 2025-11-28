@@ -433,13 +433,6 @@
       margin-top: 32px;
     }
 
-    #visit-counter {
-      display: block;
-      margin-top: 6px;
-      font-size: 0.78rem;
-      color: var(--text-muted);
-    }
-
     /* Floating Social Bar */
     .social-bar {
       position: fixed;
@@ -558,8 +551,7 @@
     <div id="top" class="hero aos">
       <div class="hero-text">
         <div class="hero-name">Alaleh Valiallahi</div>
-        <div class="hero-title">Prospective PhD Student · Curious, research-driven, and creative</div>
-        <div id="greeting" class="hero-greeting"></div>
+        <div class="hero-title">Prospective PhD Student</div>
 
         <div class="contact-row">
           Email:
@@ -573,22 +565,6 @@
           scientific writing, and science communication, and I am looking for a PhD environment where I can
           grow as an independent scientist and contribute to collaborative, high-impact projects.
         </p>
-
-        <div class="highlight-row">
-          <span class="highlight-pill">Top-ranked M.Sc. student (excellent standing)</span>
-          <span class="highlight-pill">NCBI gene record contributor</span>
-          <span class="highlight-pill">First-author Q2 journal review</span>
-          <span class="highlight-pill">Science communication for 13M+ readers</span>
-        </div>
-
-        <div class="icon-links">
-          <a class="icon-badge" href="https://scholar.google.com/citations?user=L6U-OsQAAAAJ&hl=en" target="_blank">
-            <span class="icon-circle">GS</span><span>Google Scholar</span>
-          </a>
-          <a class="icon-badge" href="https://www.linkedin.com/in/alaleh-v-971b29b6/" target="_blank">
-            <span class="icon-circle">in</span><span>LinkedIn</span>
-          </a>
-        </div>
       </div>
 
       <div class="hero-img-wrap">
@@ -599,6 +575,7 @@
     <!-- ABOUT -->
     <div id="about" class="section aos">
       <h2>About Me</h2>
+      <p class="hero-title" style="margin-bottom:6px;">Curious, research-driven, and creative</p>
       <p>
         I have a broad background in life sciences, spanning microbiology, biotechnology, and molecular
         biology. My experience includes experimental work in the lab, data interpretation, and scientific
@@ -610,6 +587,24 @@
       <p style="margin-top:10px; font-size:0.9rem; color:var(--text-muted);">
         I am happy to share additional documents, transcripts, or references upon request.
       </p>
+
+      <!-- moved highlight pills under About -->
+      <div class="highlight-row">
+        <span class="highlight-pill">Top-ranked M.Sc. student (excellent standing)</span>
+        <span class="highlight-pill">NCBI gene record contributor</span>
+        <span class="highlight-pill">First-author Q2 journal review</span>
+        <span class="highlight-pill">Science communication for 13M+ readers</span>
+      </div>
+
+      <!-- moved social icons under About -->
+      <div class="icon-links">
+        <a class="icon-badge" href="https://scholar.google.com/citations?user=L6U-OsQAAAAJ&hl=en" target="_blank">
+          <span class="icon-circle">GS</span><span>Google Scholar</span>
+        </a>
+        <a class="icon-badge" href="https://www.linkedin.com/in/alaleh-v-971b29b6/" target="_blank">
+          <span class="icon-circle">in</span><span>LinkedIn</span>
+        </a>
+      </div>
     </div>
 
     <!-- RESEARCH INTERESTS -->
@@ -691,7 +686,6 @@
 
     <div class="footer">
       Last updated: 2025 · Academic portfolio for PhD applications.
-      <span id="visit-counter"></span>
     </div>
   </div>
 
@@ -736,22 +730,6 @@
           if (id === 'top') window.scrollTo({top:0, behavior:'smooth'});
         });
       });
-
-      // Dynamic greeting
-      const g = document.getElementById('greeting');
-      const hour = new Date().getHours();
-      let text = 'Welcome to my academic page.';
-      if (hour >= 5 && hour < 12) text = 'Good morning, thanks for visiting my academic page.';
-      else if (hour >= 12 && hour < 18) text = 'Good afternoon, thanks for visiting my academic page.';
-      else text = 'Good evening, thanks for taking the time to visit my academic page.';
-      g.textContent = text;
-
-      // Mini analytics (local per browser)
-      const counterEl = document.getElementById('visit-counter');
-      let count = parseInt(localStorage.getItem('av_site_visits') || '0', 10);
-      count += 1;
-      localStorage.setItem('av_site_visits', String(count));
-      counterEl.textContent = '· Visits from this browser: ' + count;
 
       // Back-to-top & contact FAB
       const backTop = document.getElementById('back-to-top');
