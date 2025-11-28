@@ -30,6 +30,10 @@
       box-sizing: border-box;
     }
 
+    html {
+      scroll-behavior: smooth;
+    }
+
     body {
       margin: 0;
       font-family: "Inter", -apple-system, BlinkMacSystemFont, system-ui, sans-serif;
@@ -285,52 +289,6 @@
       box-shadow: 0 4px 12px rgba(37, 99, 235, 0.35);
     }
 
-    /* PROJECTS */
-    .projects-list {
-      display: grid;
-      grid-template-columns: minmax(0, 1fr);
-      gap: 12px;
-    }
-
-    @media (min-width: 850px) {
-      .projects-list {
-        grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
-      }
-    }
-
-    .project-item {
-      border-radius: 14px;
-      padding: 12px 14px;
-      border: 1px solid rgba(148, 163, 184, 0.4);
-      background: rgba(248, 250, 252, 0.9);
-      font-size: 0.92rem;
-      box-shadow: 0 8px 20px rgba(15, 23, 42, 0.04);
-    }
-    body.dark .project-item {
-      background: #020617;
-      border-color: #1f2937;
-    }
-
-    .project-title {
-      font-weight: 600;
-      margin-bottom: 4px;
-      font-size: 0.95rem;
-    }
-
-    .project-tag {
-      display: inline-block;
-      margin-top: 4px;
-      font-size: 0.78rem;
-      padding: 3px 8px;
-      border-radius: 999px;
-      background: #e0f2fe;
-      color: #1d4ed8;
-    }
-    body.dark .project-tag {
-      background: #1e293b;
-      color: #bfdbfe;
-    }
-
     .pub-item {
       margin-bottom: 14px;
     }
@@ -399,6 +357,41 @@
       font-size: 0.8rem;
       color: var(--text-muted);
       margin-top: 32px;
+    }
+
+    /* BACK TO TOP BUTTON */
+    #back-to-top {
+      position: fixed;
+      right: 20px;
+      bottom: 22px;
+      width: 38px;
+      height: 38px;
+      border-radius: 999px;
+      border: 1px solid var(--accent);
+      background: rgba(248,250,252,0.95);
+      color: var(--accent);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1rem;
+      cursor: pointer;
+      box-shadow: 0 8px 20px rgba(15,23,42,0.28);
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity 0.2s ease, transform 0.2s ease, background 0.2s ease;
+      z-index: 30;
+    }
+
+    #back-to-top.visible {
+      opacity: 1;
+      pointer-events: auto;
+      transform: translateY(0);
+    }
+
+    #back-to-top:hover {
+      background: var(--accent);
+      color: #f9fafb;
+      transform: translateY(-2px);
     }
   </style>
 </head>
@@ -481,7 +474,7 @@
       </p>
     </div>
 
-    <!-- RESEARCH INTERESTS (broad) -->
+    <!-- RESEARCH INTERESTS -->
     <div class="section">
       <h2>Research Interests</h2>
       <ul>
@@ -491,42 +484,6 @@
         <li>Data-informed, mechanism-based understanding of complex biological systems</li>
         <li>Bridging experimental work, scientific communication, and public engagement</li>
       </ul>
-    </div>
-
-    <!-- SELECTED PROJECTS (جدید و متمایز) -->
-    <div class="section">
-      <h2>Selected Projects & Contributions</h2>
-      <div class="projects-list">
-        <div class="project-item">
-          <div class="project-title">National Science Communication for Students & Teachers</div>
-          <div>
-            Author of popular science articles in a nationwide educational magazine with an audience
-            of over 13 million readers, translating complex biomedical topics into accessible content
-            for schools and the general public.
-          </div>
-          <div class="project-tag">Roshd Magazine · Science outreach</div>
-        </div>
-
-        <div class="project-item">
-          <div class="project-title">NCBI Gene Record Contribution</div>
-          <div>
-            Participated in generation and submission of gene sequence information to the NCBI database,
-            contributing to publicly available genomic resources and gaining experience with data curation
-            and annotation standards.
-          </div>
-          <div class="project-tag">Genomics · Open scientific data</div>
-        </div>
-
-        <div class="project-item">
-          <div class="project-title">Editorial & Review Work in Biology Education</div>
-          <div>
-            Member of an editorial board for a biology education journal, involved in reviewing and refining
-            manuscripts to ensure clarity, scientific accuracy, and educational value for the broader
-            teaching community.
-          </div>
-          <div class="project-tag">Editorial work · Critical reading</div>
-        </div>
-      </div>
     </div>
 
     <!-- EDUCATION -->
@@ -603,10 +560,14 @@
     </div>
   </div>
 
+  <!-- BACK TO TOP BUTTON -->
+  <button id="back-to-top" aria-label="Back to top">↑</button>
+
   <script>
     (function () {
       const body = document.body;
       const toggle = document.getElementById('theme-toggle');
+      const backToTop = document.getElementById('back-to-top');
 
       function applyTheme(theme) {
         if (theme === 'dark') {
@@ -630,6 +591,19 @@
         const newTheme = isDark ? 'dark' : 'light';
         localStorage.setItem('theme', newTheme);
         applyTheme(newTheme);
+      });
+
+      // back-to-top visibility
+      window.addEventListener('scroll', () => {
+        if (window.scrollY > 400) {
+          backToTop.classList.add('visible');
+        } else {
+          backToTop.classList.remove('visible');
+        }
+      });
+
+      backToTop.addEventListener('click', () => {
+        window.scrollTo({ top: 0, behavior: 'smooth' });
       });
     })();
   </script>
