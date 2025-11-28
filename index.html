@@ -1,795 +1,152 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <title>Alaleh Valiallahi – Prospective PhD Student</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-
-  <!-- SEO & Social Preview -->
-  <meta name="description" content="Academic portfolio of Alaleh Valiallahi – prospective PhD student with experience in microbiology, biotechnology, and molecular biology." />
-  <meta property="og:title" content="Alaleh Valiallahi – Prospective PhD Student" />
-  <meta property="og:description" content="Research-driven and creative MSc graduate with publications, thesis work, and science communication experience." />
-  <meta property="og:type" content="website" />
-  <meta property="og:url" content="https://alalehvaliallahi.github.io" />
-  <meta property="og:image" content="https://alalehvaliallahi.github.io/Screenshot%202025-11-27%20131605.png" />
-  <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content="Alaleh Valiallahi – Prospective PhD Student" />
-  <meta name="twitter:description" content="Academic portfolio for graduate and PhD applications." />
-  <meta name="twitter:image" content="https://alalehvaliallahi.github.io/Screenshot%202025-11-27%20131605.png" />
-
-  <style>
-    * { box-sizing: border-box; }
-    html { scroll-behavior: smooth; }
-
-    /* THEME VARIABLES */
-    body[data-theme="light"] {
-      --bg: #f8fafc;
-      --card-bg: rgba(255,255,255,0.80);
-      --accent: #2563eb;
-      --accent-soft: #dbeafe;
-      --text-main: #0f172a;
-      --text-muted: #64748b;
-      --border-soft: #e2e8f0;
-      --shadow-soft: 0 18px 45px rgba(15,23,42,0.18);
-      --glass-border: rgba(148,163,184,0.5);
-    }
-
-    body[data-theme="dark"] {
-      --bg: #020617;
-      --card-bg: rgba(15,23,42,0.92);
-      --accent: #60a5fa;
-      --accent-soft: #1e293b;
-      --text-main: #e5e7eb;
-      --text-muted: #9ca3af;
-      --border-soft: #1f2937;
-      --shadow-soft: 0 18px 45px rgba(15,23,42,0.85);
-      --glass-border: rgba(30,64,175,0.7);
-    }
-
-    body[data-theme="mint"] {
-      --bg: #ecfdf5;
-      --card-bg: rgba(236,253,245,0.9);
-      --accent: #10b981;
-      --accent-soft: #ccfbf1;
-      --text-main: #064e3b;
-      --text-muted: #047857;
-      --border-soft: #a7f3d0;
-      --shadow-soft: 0 18px 45px rgba(16,185,129,0.3);
-      --glass-border: rgba(34,197,94,0.5);
-    }
-
-    body[data-theme="blue"] {
-      --bg: #eff6ff;
-      --card-bg: rgba(239,246,255,0.9);
-      --accent: #1d4ed8;
-      --accent-soft: #dbeafe;
-      --text-main: #0f172a;
-      --text-muted: #475569;
-      --border-soft: #bfdbfe;
-      --shadow-soft: 0 18px 45px rgba(30,64,175,0.35);
-      --glass-border: rgba(129,140,248,0.6);
-    }
-
-    body {
-      margin: 0;
-      font-family: "Inter", -apple-system, BlinkMacSystemFont, system-ui, sans-serif;
-      background: radial-gradient(circle at top left, #e0f2fe 0, var(--bg) 40%, #e5e7eb 100%);
-      color: var(--text-main);
-      line-height: 1.6;
-      transition: background 0.3s ease, color 0.3s ease;
-    }
-
-    .container {
-      max-width: 1050px;
-      margin: 0 auto;
-      padding: 16px 20px 32px;
-    }
-
-    /* TOP BAR + NAV */
-    .top-bar {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      gap: 10px;
-      flex-wrap: wrap;
-      margin-bottom: 10px;
-    }
-
-    .section-nav {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 6px;
-    }
-
-    .section-nav button {
-      border-radius: 999px;
-      border: 1px solid var(--border-soft);
-      background: rgba(248,250,252,0.85);
-      padding: 5px 10px;
-      font-size: 0.8rem;
-      cursor: pointer;
-      color: var(--text-main);
-    }
-
-    .section-nav button:hover {
-      background: var(--accent-soft);
-    }
-
-    #theme-toggle {
-      border: 1px solid var(--border-soft);
-      background: rgba(255,255,255,0.8);
-      padding: 6px 11px;
-      border-radius: 999px;
-      font-size: 0.8rem;
-      cursor: pointer;
-      display: inline-flex;
-      align-items: center;
-      gap: 6px;
-      color: var(--text-main);
-      backdrop-filter: blur(6px);
-    }
-
-    /* HERO */
-    .hero {
-      display: flex;
-      flex-direction: column-reverse;
-      gap: 20px;
-      background: var(--card-bg);
-      padding: 26px 22px;
-      border-radius: 20px;
-      box-shadow: var(--shadow-soft);
-      border: 1px solid var(--glass-border);
-      backdrop-filter: blur(16px);
-      -webkit-backdrop-filter: blur(16px);
-    }
-
-    @media (min-width: 850px) {
-      .hero {
-        flex-direction: row;
-        align-items: center;
-      }
-    }
-
-    .hero-text { flex: 1.1; }
-
-    .hero-name {
-      font-size: 2.05rem;
-      font-weight: 800;
-      letter-spacing: 0.02em;
-      margin-bottom: 4px;
-    }
-
-    .hero-title {
-      font-size: 1.02rem;
-      color: var(--text-muted);
-      margin-bottom: 4px;
-    }
-
-    .hero-greeting {
-      font-size: 0.9rem;
-      color: var(--text-muted);
-      margin-bottom: 10px;
-      font-style: italic;
-    }
-
-    .contact-row {
-      font-size: 0.93rem;
-      margin-bottom: 10px;
-    }
-
-    .contact-row a {
-      color: var(--accent);
-      text-decoration: none;
-      font-weight: 500;
-    }
-
-    .hero-p {
-      font-size: 0.96rem;
-      color: #334155;
-      margin-top: 6px;
-      margin-bottom: 12px;
-    }
-
-    body[data-theme="dark"] .hero-p { color: #cbd5f5; }
-    body[data-theme="mint"] .hero-p { color: #065f46; }
-
-    .highlight-row {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 8px;
-      margin-top: 8px;
-    }
-
-    .highlight-pill {
-      font-size: 0.78rem;
-      padding: 4px 9px;
-      border-radius: 999px;
-      border: 1px solid var(--border-soft);
-      background: var(--accent-soft);
-      color: #1d4ed8;
-      font-weight: 600;
-    }
-
-    body[data-theme="dark"] .highlight-pill { color: #bfdbfe; }
-    body[data-theme="mint"] .highlight-pill { color: #047857; }
-
-    .icon-links {
-      display: flex;
-      gap: 10px;
-      flex-wrap: wrap;
-      margin-top: 12px;
-    }
-
-    .icon-badge {
-      display: inline-flex;
-      align-items: center;
-      gap: 6px;
-      padding: 5px 12px;
-      border-radius: 999px;
-      background: var(--accent-soft);
-      color: var(--accent);
-      font-size: 0.8rem;
-      font-weight: 600;
-      border: 1px solid #bfdbfe;
-      text-decoration: none;
-      transition: transform 0.1s ease, box-shadow 0.1s ease;
-    }
-
-    .icon-badge:hover {
-      transform: translateY(-1px);
-      box-shadow: 0 6px 16px rgba(37,99,235,0.35);
-    }
-
-    .icon-circle {
-      width: 18px;
-      height: 18px;
-      border-radius: 999px;
-      background: var(--accent);
-      color: white;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 0.7rem;
-    }
-
-    .hero-img-wrap {
-      flex: 1;
-      display: flex;
-      justify-content: center;
-    }
-
-    .hero-img {
-      width: 260px;
-      height: 260px;
-      border-radius: 22px;
-      object-fit: cover;
-      box-shadow: 0 16px 45px rgba(15,23,42,0.4);
-      border: 3px solid rgba(248,250,252,0.9);
-      transition: transform 0.2s ease;
-    }
-
-    .hero-img:hover {
-      transform: translateY(-3px) scale(1.01);
-    }
-
-    /* SECTIONS */
-    .section {
-      margin-top: 34px;
-      background: var(--card-bg);
-      padding: 24px;
-      border-radius: 18px;
-      box-shadow: 0 14px 40px rgba(15,23,42,0.08);
-      border: 1px solid var(--glass-border);
-      backdrop-filter: blur(14px);
-      -webkit-backdrop-filter: blur(14px);
-    }
-
-    .section h2 {
-      font-size: 1.18rem;
-      margin-bottom: 9px;
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
-    }
-
-    .section h2::before {
-      content: "";
-      width: 5px;
-      height: 18px;
-      border-radius: 10px;
-      background: var(--accent);
-    }
-
-    .section p {
-      font-size: 0.95rem;
-      color: #334155;
-      margin: 0;
-    }
-
-    body[data-theme="dark"] .section p { color: #d1d5db; }
-    body[data-theme="mint"] .section p { color: #064e3b; }
-
-    .section ul {
-      margin: 6px 0 0;
-      padding-left: 18px;
-      font-size: 0.95rem;
-      color: #334155;
-    }
-
-    body[data-theme="dark"] .section ul { color: #d1d5db; }
-    body[data-theme="mint"] .section ul { color: #065f46; }
-
-    .education-item { margin-bottom: 10px; }
-
-    .pill {
-      display: inline-flex;
-      align-items: center;
-      padding: 2px 8px;
-      border-radius: 6px;
-      background: #f1f5f9;
-      border: 1px solid #e2e8f0;
-      font-size: 0.75rem;
-      margin-left: 6px;
-    }
-
-    body[data-theme="dark"] .pill {
-      background: #020617;
-      border-color: #1f2937;
-      color: #e5e7eb;
-    }
-
-    body[data-theme="mint"] .pill {
-      background: #ecfdf5;
-      border-color: #a7f3d0;
-      color: #065f46;
-    }
-
-    .thesis-chip {
-      padding: 4px 10px;
-      border-radius: 999px;
-      background: var(--accent);
-      color: white;
-      font-size: 0.78rem;
-      text-decoration: none;
-      font-weight: 600;
-      box-shadow: 0 4px 12px rgba(37,99,235,0.35);
-    }
-
-    .pub-item { margin-bottom: 14px; }
-
-    .pub-meta {
-      font-size: 0.86rem;
-      color: var(--text-muted);
-    }
-
-    .pub-link a {
-      color: var(--accent);
-      font-size: 0.86rem;
-      text-decoration: none;
-    }
-
-    /* DOI highlight */
-    a.doi-link {
-      border-bottom: 1px dashed var(--accent);
-      padding-bottom: 1px;
-    }
-
-    a.doi-link:hover {
-      background: var(--accent-soft);
-    }
-
-    .action-row {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 12px;
-      margin-top: 18px;
-    }
-
-    .roshd-button {
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
-      padding: 11px 18px;
-      border-radius: 999px;
-      font-size: 0.9rem;
-      font-weight: 600;
-      text-decoration: none;
-      background: linear-gradient(135deg, #2563eb, #4f46e5);
-      color: #f9fafb;
-      box-shadow: 0 10px 28px rgba(37,99,235,0.55);
-      border: none;
-      position: relative;
-      overflow: hidden;
-    }
-
-    .roshd-button .arrow {
-      font-size: 1rem;
-      transform: translateX(0);
-      transition: transform 0.15s ease;
-    }
-
-    .roshd-button:hover .arrow {
-      transform: translateX(2px);
-    }
-
-    .cv-button {
-      display: inline-flex;
-      align-items: center;
-      gap: 6px;
-      padding: 9px 15px;
-      border-radius: 999px;
-      border: 1px solid var(--accent);
-      background: transparent;
-      color: var(--accent);
-      font-size: 0.9rem;
-      font-weight: 600;
-      text-decoration: none;
-    }
-
-    .footer {
-      text-align: center;
-      font-size: 0.8rem;
-      color: var(--text-muted);
-      margin-top: 32px;
-    }
-
-    #visit-counter {
-      display: block;
-      margin-top: 6px;
-      font-size: 0.78rem;
-      color: var(--text-muted);
-    }
-
-    /* Floating Social Bar */
-    .social-bar {
-      position: fixed;
-      top: 50%;
-      left: 16px;
-      transform: translateY(-50%);
-      display: flex;
-      flex-direction: column;
-      gap: 8px;
-      z-index: 20;
-    }
-
-    .social-bar a {
-      width: 32px;
-      height: 32px;
-      border-radius: 999px;
-      background: rgba(15,23,42,0.9);
-      color: #e5e7eb;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 0.75rem;
-      text-decoration: none;
-      box-shadow: 0 8px 18px rgba(15,23,42,0.7);
-    }
-
-    body[data-theme="light"] .social-bar a {
-      background: rgba(255,255,255,0.95);
-      color: var(--accent);
-      border: 1px solid var(--border-soft);
-    }
-
-    @media (max-width: 700px) {
-      .social-bar { display: none; }
-    }
-
-    /* FAB Buttons */
-    #back-to-top,
-    #contact-fab {
-      position: fixed;
-      bottom: 22px;
-      width: 38px;
-      height: 38px;
-      border-radius: 999px;
-      border: 1px solid var(--accent);
-      background: rgba(248,250,252,0.95);
-      color: var(--accent);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 1rem;
-      cursor: pointer;
-      box-shadow: 0 8px 20px rgba(15,23,42,0.28);
-      opacity: 0;
-      pointer-events: none;
-      transition: opacity 0.2s ease, transform 0.2s ease, background 0.2s ease;
-      z-index: 30;
-    }
-
-    #back-to-top.visible,
-    #contact-fab.visible {
-      opacity: 1;
-      pointer-events: auto;
-      transform: translateY(0);
-    }
-
-    #back-to-top { right: 20px; }
-    #contact-fab { right: 70px; }
-
-    #back-to-top:hover,
-    #contact-fab:hover {
-      background: var(--accent);
-      color: #f9fafb;
-      transform: translateY(-2px);
-    }
-
-    /* AOS */
-    .aos {
-      opacity: 0;
-      transform: translateY(18px);
-      transition: opacity 0.4s ease-out, transform 0.4s ease-out;
-    }
-
-    .aos-visible {
-      opacity: 1;
-      transform: translateY(0);
-    }
-
-    @media (max-width: 850px) {
-      .hero { padding: 20px 16px; }
-    }
-  </style>
-</head>
-
-<body data-theme="light">
-  <!-- Floating Social Bar -->
-  <div class="social-bar">
-    <a href="https://scholar.google.com/citations?user=L6U-OsQAAAAJ&hl=en" target="_blank" title="Google Scholar">GS</a>
-    <a href="https://www.linkedin.com/in/alaleh-v-971b29b6/" target="_blank" title="LinkedIn">in</a>
-    <a href="Alaleh_Valiallahi_CV.pdf" target="_blank" title="CV">CV</a>
+<div class="container">
+
+  <!-- TOP BAR -->
+  <div class="top-bar">
+    <div class="section-nav">
+      <button data-target="top">Top</button>
+      <button data-target="about">About</button>
+      <button data-target="research">Research</button>
+      <button data-target="education">Education</button>
+      <button data-target="publications">Publications</button>
+    </div>
+
+    <button id="theme-toggle">☀ Theme: Light</button>
   </div>
 
-  <div class="container">
-    <div class="top-bar">
-      <div class="section-nav">
-        <button data-target="top">Top</button>
-        <button data-target="about">About</button>
-        <button data-target="research">Research</button>
-        <button data-target="education">Education</button>
-        <button data-target="publications">Publications</button>
-      </div>
-      <button id="theme-toggle">☀ Theme: Light</button>
-    </div>
+  <!-- HERO -->
+  <div id="top" class="hero">
+    <div class="hero-text">
+      <div class="hero-name">Alaleh Valiallahi</div>
+      <div class="hero-title">Prospective PhD Student</div>
 
-    <!-- HERO -->
-    <div id="top" class="hero aos">
-      <div class="hero-text">
-        <div class="hero-name">Alaleh Valiallahi</div>
-        <div class="hero-title">Prospective PhD Student · Curious, research-driven, and creative</div>
-        <div id="greeting" class="hero-greeting"></div>
-
-        <div class="contact-row">
-          Email:
-          <a href="mailto:avaliallahi92@gmail.com">avaliallahi92@gmail.com</a>
-          &nbsp;·&nbsp; Based in Tehran, Iran
-        </div>
-
-        <p class="hero-p">
-          I am a motivated and detail-oriented researcher with a strong academic record and experience
-          across microbiology, biotechnology, and molecular biology. I enjoy connecting experimental work,
-          scientific writing, and science communication, and I am looking for a PhD environment where I can
-          grow as an independent scientist and contribute to collaborative, high-impact projects.
-        </p>
-
-        <div class="highlight-row">
-          <span class="highlight-pill">Top-ranked M.Sc. student (excellent standing)</span>
-          <span class="highlight-pill">NCBI gene record contributor</span>
-          <span class="highlight-pill">First-author Q2 journal review</span>
-          <span class="highlight-pill">Science communication for 13M+ readers</span>
-        </div>
-
-        <div class="icon-links">
-          <a class="icon-badge" href="https://scholar.google.com/citations?user=L6U-OsQAAAAJ&hl=en" target="_blank">
-            <span class="icon-circle">GS</span><span>Google Scholar</span>
-          </a>
-          <a class="icon-badge" href="https://www.linkedin.com/in/alaleh-v-971b29b6/" target="_blank">
-            <span class="icon-circle">in</span><span>LinkedIn</span>
-          </a>
-        </div>
+      <div class="contact-row">
+        Email: <a href="mailto:avaliallahi92@gmail.com">avaliallahi92@gmail.com</a>
+        &nbsp;· Based in Tehran, Iran
       </div>
 
-      <div class="hero-img-wrap">
-        <img src="Screenshot 2025-11-27 131605.png" alt="Colorful microbiology plates" class="hero-img" />
-      </div>
-    </div>
-
-    <!-- ABOUT -->
-    <div id="about" class="section aos">
-      <h2>About Me</h2>
-      <p>
-        I have a broad background in life sciences, spanning microbiology, biotechnology, and molecular
-        biology. My experience includes experimental work in the lab, data interpretation, and scientific
-        writing, as well as communicating complex topics to non-specialist audiences. I am especially
-        interested in interdisciplinary projects that link biological mechanisms to real-world applications
-        in human health. My goal is to build a long-term research career, not only collecting degrees, but
-        contributing to meaningful, collaborative science.
+      <p style="font-size:0.96rem;margin-bottom:12px;">
+        I am a motivated and detail-oriented researcher with a strong academic record and experience
+        across microbiology, biotechnology, and molecular biology. I enjoy connecting experimental work,
+        scientific writing, and science communication, and I am looking for a PhD environment where I can
+        grow as an independent scientist and contribute to collaborative, high-impact projects.
       </p>
-      <p style="margin-top:10px; font-size:0.9rem; color:var(--text-muted);">
-        I am happy to share additional documents, transcripts, or references upon request.
-      </p>
-    </div>
 
-    <!-- RESEARCH INTERESTS -->
-    <div id="research" class="section aos">
-      <h2>Research Interests</h2>
-      <ul>
-        <li>Infectious diseases and host–microbe interactions in human health</li>
-        <li>Biotechnology-driven approaches to diagnostics, prevention, and therapy</li>
-        <li>Interdisciplinary and translational life science research</li>
-        <li>Data-informed, mechanism-based understanding of complex biological systems</li>
-        <li>Bridging experimental work, scientific communication, and public engagement</li>
-      </ul>
-    </div>
-
-    <!-- EDUCATION -->
-    <div id="education" class="section aos">
-      <h2>Education</h2>
-      <div class="education-item" style="display:flex; align-items:center; flex-wrap:wrap; gap:10px;">
-        <strong>M.Sc. in Biotechnology</strong>
-        <span class="pill">GPA: 16.97 / 20 (≈3.7 / 4)</span>
-        <span class="pill">Graduated with excellent standing</span>
-        <a href="thesis.html" class="thesis-chip">🔬 Thesis Project</a>
-      </div>
-      <div class="education-item">
-        <strong>B.Sc. in Cellular &amp; Molecular Biology – Microbiology</strong>
-        <span class="pill">GPA: 16.43 / 20 (≈3.6 / 4)</span>
-      </div>
-    </div>
-
-    <!-- PUBLICATIONS -->
-    <div id="publications" class="section aos">
-      <h2>Selected Publications</h2>
-
-      <div class="pub-item">
-        <strong>PLGA Nanoparticles as Drug Delivery Systems in Leishmaniasis Chemotherapy</strong>
-        <div class="pub-meta">
-          First-author review · Current Medicinal Chemistry (Q2), 2024
-        </div>
-        <div class="pub-link">
-          <a href="https://doi.org/10.2174/0929867331666230823094737" target="_blank">
-            View article
-          </a>
-        </div>
-      </div>
-
-      <div class="pub-item">
-        <strong>Optimization for Rapid Detection of <em>E. coli</em> O157:H7 Using Real-Time LAMP</strong>
-        <div class="pub-meta">
-          Research in Molecular Medicine, 2022
-        </div>
-        <div class="pub-link">
-          <a href="https://doi.org/10.32598/rmm.10.2.903.8" target="_blank">
-            View article
-          </a>
-        </div>
-      </div>
-
-      <div class="pub-item">
-        <strong>Rapid Detection of <em>E. coli</em> O157:H7 Using Multiplex PCR</strong>
-        <div class="pub-meta">
-          Chulalongkorn Medical Journal, 2022
-        </div>
-        <div class="pub-link">
-          <a href="https://www.researchgate.net/publication/366030059" target="_blank">
-            View article
-          </a>
-        </div>
-      </div>
-
-      <div class="action-row">
-        <a href="roshd.html" class="roshd-button">
-          📘 Roshd Magazine Science Articles <span class="arrow">→</span>
+      <div class="icon-links">
+        <a class="icon-badge" href="https://scholar.google.com/citations?user=L6U-OsQAAAAJ" target="_blank">
+          <span class="icon-circle">GS</span> Google Scholar
         </a>
-        <a href="Alaleh_Valiallahi_CV.pdf" class="cv-button">
-          📄 Download my full CV
+        <a class="icon-badge" href="https://www.linkedin.com/in/alaleh-v-971b29b6/" target="_blank">
+          <span class="icon-circle">in</span> LinkedIn
         </a>
       </div>
     </div>
 
-    <div class="footer">
-      Last updated: 2025 · Academic portfolio for PhD applications.
-      <span id="visit-counter"></span>
+    <div class="hero-img-wrap">
+      <img class="hero-img" src="Screenshot 2025-11-27 131605.png">
     </div>
   </div>
 
-  <!-- FAB Buttons -->
-  <button id="back-to-top" aria-label="Back to top">↑</button>
-  <button id="contact-fab" aria-label="Contact by email">✉</button>
+  <!-- ABOUT -->
+  <div id="about" class="section">
+    <h2>About Me</h2>
+    <p>
+      I have a broad background in life sciences, spanning microbiology, biotechnology, and molecular
+      biology. My experience includes laboratory work, scientific writing, and science communication.
+      I am especially interested in interdisciplinary projects that connect biological mechanisms to
+      real-world applications.
+    </p>
 
-  <script>
-    (function () {
-      const body = document.body;
-      const themeBtn = document.getElementById('theme-toggle');
-      const themes = ['light','dark','mint','blue'];
+    <div class="highlight-row">
+      <span class="highlight-pill">Top-ranked M.Sc. student</span>
+      <span class="highlight-pill">NCBI gene record contributor</span>
+      <span class="highlight-pill">First-author Q2 journal review</span>
+      <span class="highlight-pill">13M+ readers science communication</span>
+    </div>
 
-      function setTheme(theme) {
-        body.setAttribute('data-theme', theme);
-        localStorage.setItem('av_theme', theme);
-        const label =
-          theme === 'light' ? '☀ Theme: Light' :
-          theme === 'dark'  ? '🌙 Theme: Dark'  :
-          theme === 'mint'  ? '🌿 Theme: Mint'  :
-                              '🫐 Theme: Blue';
-        themeBtn.textContent = label;
-      }
+    <p style="margin-top:10px;font-size:0.9rem;color:var(--muted);">
+      I am happy to share additional documents, transcripts, or references upon request.
+    </p>
+  </div>
 
-      const savedTheme = localStorage.getItem('av_theme');
-      if (themes.includes(savedTheme)) setTheme(savedTheme);
-      else setTheme('light');
+  <!-- RESEARCH -->
+  <div id="research" class="section">
+    <h2>Research Interests</h2>
+    <ul>
+      <li>Biotechnology-driven approaches to diagnostics and human health</li>
+      <li>Interdisciplinary and translational life science research</li>
+      <li>Host–microbe interactions and biological mechanisms</li>
+      <li>Experimental research, data interpretation, and science communication</li>
+    </ul>
+  </div>
 
-      themeBtn.addEventListener('click', () => {
-        const current = body.getAttribute('data-theme') || 'light';
-        const idx = themes.indexOf(current);
-        const next = themes[(idx + 1) % themes.length];
-        setTheme(next);
-      });
+  <!-- EDUCATION -->
+  <div id="education" class="section">
+    <h2>Education</h2>
 
-      // Section nav
-      document.querySelectorAll('.section-nav button').forEach(btn => {
-        btn.addEventListener('click', () => {
-          const id = btn.getAttribute('data-target');
-          const el = document.getElementById(id);
-          if (el) el.scrollIntoView({behavior:'smooth'});
-          if (id === 'top') window.scrollTo({top:0, behavior:'smooth'});
-        });
-      });
+    <div class="education-item">
+      <strong>M.Sc. in Biotechnology</strong>
+      <span class="pill">GPA: 16.97 / 20 (≈3.7/4)</span>
+      <span class="pill">Excellent standing</span>
+      <a href="thesis.html" class="thesis-chip">🔬 Thesis Project</a>
+    </div>
 
-      // Dynamic greeting
-      const g = document.getElementById('greeting');
-      const hour = new Date().getHours();
-      let text = 'Welcome to my academic page.';
-      if (hour >= 5 && hour < 12) text = 'Good morning, thanks for visiting my academic page.';
-      else if (hour >= 12 && hour < 18) text = 'Good afternoon, thanks for visiting my academic page.';
-      else text = 'Good evening, thanks for taking the time to visit my academic page.';
-      g.textContent = text;
+    <div class="education-item">
+      <strong>B.Sc. in Cellular & Molecular Biology – Microbiology</strong>
+      <span class="pill">GPA: 16.43 / 20 (≈3.6/4)</span>
+    </div>
+  </div>
 
-      // Mini analytics (local per browser)
-      const counterEl = document.getElementById('visit-counter');
-      let count = parseInt(localStorage.getItem('av_site_visits') || '0', 10);
-      count += 1;
-      localStorage.setItem('av_site_visits', String(count));
-      counterEl.textContent = '· Visits from this browser: ' + count;
+  <!-- PUBLICATIONS -->
+  <div id="publications" class="section">
+    <h2>Selected Publications</h2>
 
-      // Back-to-top & contact FAB
-      const backTop = document.getElementById('back-to-top');
-      const contactFab = document.getElementById('contact-fab');
-      window.addEventListener('scroll', () => {
-        const y = window.scrollY;
-        if (y > 300) {
-          backTop.classList.add('visible');
-          contactFab.classList.add('visible');
-        } else {
-          backTop.classList.remove('visible');
-          contactFab.classList.remove('visible');
-        }
-      });
-      backTop.addEventListener('click', () => {
-        window.scrollTo({top: 0, behavior: 'smooth'});
-      });
-      contactFab.addEventListener('click', () => {
-        window.location.href = 'mailto:avaliallahi92@gmail.com';
-      });
+    <p><strong>PLGA Nanoparticles as Drug Delivery Systems in Leishmaniasis Chemotherapy</strong><br>
+    Current Medicinal Chemistry (Q2), 2024<br>
+    <a href="https://doi.org/10.2174/0929867331666230823094737" target="_blank">View article</a></p>
 
-      // AOS (animation on scroll)
-      const aosEls = document.querySelectorAll('.aos');
-      const observer = new IntersectionObserver(entries => {
-        entries.forEach(entry => {
-          if (entry.isIntersecting) {
-            entry.target.classList.add('aos-visible');
-            observer.unobserve(entry.target);
-          }
-        });
-      }, { threshold: 0.15 });
-      aosEls.forEach(el => observer.observe(el));
+    <p><strong>Optimization for Rapid Detection of <em>E. coli</em> O157:H7 Using Real-Time LAMP</strong><br>
+    Research in Molecular Medicine, 2022<br>
+    <a href="https://doi.org/10.32598/rmm.10.2.903.8" target="_blank">View article</a></p>
 
-      // Auto highlight DOI links
-      document.querySelectorAll('a[href*="doi.org"]').forEach(a => {
-        a.classList.add('doi-link');
-      });
-    })();
-  </script>
+    <p><strong>Rapid Detection of <em>E. coli</em> O157:H7 Using Multiplex PCR</strong><br>
+    Chulalongkorn Medical Journal, 2022<br>
+    <a href="https://www.researchgate.net/publication/366030059" target="_blank">View article</a></p>
+
+    <a class="roshd-button" href="roshd.html">📘 Roshd Science Articles →</a>
+  </div>
+
+</div>
+
+<script>
+  /* THEME SWITCH */
+  const body=document.body;
+  const themes=['light','dark','mint','blue'];
+  const btn=document.getElementById('theme-toggle');
+
+  function setTheme(t){
+    body.setAttribute('data-theme',t);
+    localStorage.setItem('theme',t);
+    btn.textContent=t==="light"?"☀ Theme: Light":
+                     t==="dark" ?"🌙 Theme: Dark":
+                     t==="mint" ?"🌿 Theme: Mint":
+                                 "🫐 Theme: Blue";
+  }
+  setTheme(localStorage.getItem('theme')||'light');
+  btn.onclick=()=>{
+    const now=body.getAttribute('data-theme');
+    const next=themes[(themes.indexOf(now)+1)%4];
+    setTheme(next);
+  };
+
+  /* SECTION SCROLL */
+  document.querySelectorAll('.section-nav button').forEach(b=>{
+    b.onclick=()=>{
+      const id=b.dataset.target;
+      if(id==="top")window.scrollTo({top:0,behavior:"smooth"});
+      else document.getElementById(id).scrollIntoView({behavior:"smooth"});
+    };
+  });
+</script>
+
 </body>
 </html>
