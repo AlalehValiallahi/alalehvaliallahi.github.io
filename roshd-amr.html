@@ -4,114 +4,185 @@
 <head>
 
 <meta charset="UTF-8">
-
-<title>A Day When Drugs May No Longer Work – Roshd Magazine</title>
+<title>Antimicrobial Resistance Article | Roshd Magazine</title>
 
 <meta name="viewport" content="width=device-width, initial-scale=1">
 
 <style>
 
+:root{
+--blue:#1d4ed8;
+--dark:#0f172a;
+--gray:#64748b;
+--bg:#f8fafc;
+}
+
 body{
 margin:0;
-font-family:Arial, Helvetica, sans-serif;
-background:#f8fafc;
-color:#0f172a;
-line-height:1.7;
+font-family:Inter,Arial,sans-serif;
+background:var(--bg);
+color:var(--dark);
+line-height:1.8;
 }
+
 
 .container{
-max-width:1150px;
+max-width:1100px;
 margin:auto;
-padding:30px;
+padding:35px;
 }
+
 
 .back{
-margin-bottom:20px;
+margin-bottom:25px;
 }
 
-a{
-color:#2563eb;
-text-decoration:none;
-}
 
-.images{
-display:flex;
-gap:20px;
-flex-wrap:wrap;
+.hero{
+
 background:white;
-padding:25px;
-border-radius:18px;
-box-shadow:0 10px 30px rgba(0,0,0,.08);
+border-radius:22px;
+padding:30px;
+box-shadow:0 15px 40px rgba(0,0,0,.08);
+
 }
 
-.images img{
-width:48%;
-border-radius:12px;
-box-shadow:0 8px 20px rgba(0,0,0,.15);
+
+.gallery{
+
+display:grid;
+grid-template-columns:1fr 1fr;
+gap:25px;
+align-items:center;
+
 }
 
-.card{
-background:white;
-margin-top:30px;
-padding:35px;
-border-radius:18px;
-box-shadow:0 10px 30px rgba(0,0,0,.08);
+
+.gallery img{
+
+width:100%;
+height:420px;
+object-fit:contain;
+background:#fff;
+border-radius:16px;
+padding:10px;
+box-shadow:0 8px 25px rgba(0,0,0,.15);
+
+transition:.3s;
+
 }
 
-h1{
-font-size:32px;
-line-height:1.3;
-color:#1e3a8a;
+
+.gallery img:hover{
+
+transform:scale(1.03);
+
 }
 
-h2{
-color:#2563eb;
-margin-top:30px;
-}
 
-.meta{
-color:#64748b;
-font-size:15px;
-}
+.badge{
 
-.summary{
-font-size:17px;
-text-align:justify;
-}
-
-.tags span{
 display:inline-block;
 background:#dbeafe;
 color:#1e40af;
-padding:7px 14px;
+padding:6px 15px;
 border-radius:20px;
-margin:5px;
 font-size:14px;
+margin-bottom:15px;
+
 }
 
-.quote{
+
+h1{
+
+font-size:38px;
+line-height:1.25;
+color:#1e3a8a;
+
+}
+
+
+.subtitle{
+
+font-size:18px;
+color:var(--gray);
+
+}
+
+
+.card{
+
+margin-top:30px;
+background:white;
+padding:35px;
+border-radius:22px;
+box-shadow:0 15px 40px rgba(0,0,0,.07);
+
+}
+
+
+h2{
+
+color:#2563eb;
+
+}
+
+
+.text{
+
+font-size:17px;
+text-align:justify;
+
+}
+
+
+.highlight{
+
 border-left:5px solid #2563eb;
 padding-left:20px;
 font-style:italic;
-color:#334155;
+background:#eff6ff;
+padding-top:15px;
+padding-bottom:15px;
+
 }
+
+
+
+.tags span{
+
+display:inline-block;
+background:#eff6ff;
+color:#1e40af;
+padding:8px 15px;
+border-radius:30px;
+margin:5px;
+
+}
+
 
 
 @media(max-width:800px){
 
-.images img{
-width:100%;
+.gallery{
+grid-template-columns:1fr;
+}
+
+.gallery img{
+height:auto;
 }
 
 h1{
-font-size:25px;
+font-size:28px;
 }
 
 }
+
 
 </style>
 
 </head>
+
 
 
 <body>
@@ -121,22 +192,48 @@ font-size:25px;
 
 
 <div class="back">
-
 ← <a href="index.html">Back to main page</a>
+</div>
+
+
+
+<div class="hero">
+
+
+<div class="badge">
+Science Communication Publication | Antimicrobial Resistance
+</div>
+
+
+<div class="gallery">
+
+
+<img src="roshd-antibiotic-resistance.png.png"
+alt="Antimicrobial resistance article">
+
+
+<img src="roshd-antibiotic-consumption-world.png.png"
+alt="Global antibiotic consumption">
 
 </div>
 
 
 
-<div class="images">
+<h1>
+
+A Day When Drugs May No Longer Work:
+<br>
+
+Understanding the Growing Challenge of Antimicrobial Resistance
+
+</h1>
 
 
-<img src="roshd-antibiotic-resistance.png.png"
-alt="Roshd Antibiotic Resistance Article">
+<p class="subtitle">
 
+Roshd Educational Magazine | Published 2026
 
-<img src="roshd-antibiotic-consumption-world.png.png"
-alt="Global Antibiotic Consumption">
+</p>
 
 
 </div>
@@ -147,76 +244,51 @@ alt="Global Antibiotic Consumption">
 <div class="card">
 
 
-<h1>
-
-A Day When Drugs May No Longer Work:
-<br>
-The Growing Threat of Antimicrobial Resistance
-
-</h1>
-
-
-<p class="meta">
-
-<strong>
-Roshd Educational Magazine
-</strong>
-
-<br>
-
-Published: 2026
-
-</p>
-
-
-
 <h2>
-About this article
+Scientific Overview
 </h2>
 
 
-<p class="summary">
+<p class="text">
+
+Antimicrobial resistance (AMR) represents one of the most significant challenges in modern medicine. This article explores how inappropriate antibiotic consumption and misuse contribute to the emergence of resistant bacterial populations and threaten the effectiveness of current therapeutic strategies.
 
 
-This science communication article highlights one of the most important challenges in modern medicine: antimicrobial resistance (AMR).
+By presenting global antibiotic consumption patterns and explaining the biological consequences of antimicrobial pressure, the article introduces the fundamental concept that bacterial populations can adapt under selective conditions, allowing resistant strains to survive and spread.
 
 
-The article discusses how inappropriate antibiotic consumption and misuse can accelerate the emergence of resistant microorganisms and threaten the effectiveness of existing treatments.
-
-
-By introducing the relationship between antibiotic pressure and bacterial adaptation, this work explains how resistant bacterial populations may develop and spread, creating serious challenges for healthcare systems worldwide.
-
-
-The article presents global antibiotic consumption patterns and emphasizes the importance of antimicrobial stewardship, rational antibiotic use, public awareness, and preventive strategies to preserve the effectiveness of essential antimicrobial therapies.
-
-
-Written for a nationwide educational audience, this article translates microbiological concepts into an accessible scientific narrative and highlights the urgent need for responsible antibiotic practices.
-
-
+The article highlights the importance of antimicrobial stewardship, rational antibiotic use, public awareness, and preventive approaches to preserve the effectiveness of antimicrobial therapies for future generations.
 
 </p>
 
 
 
 <h2>
-Scientific Focus
+Research Relevance
+</h2>
+
+
+<p class="text">
+
+This publication reflects my interest in microbiology, bacterial adaptation, and global health challenges associated with antibiotic resistance. Communicating complex scientific concepts to a broader audience has strengthened my ability to translate microbiological mechanisms into meaningful public health messages.
+
+</p>
+
+
+
+<h2>
+Key Scientific Areas
 </h2>
 
 
 <div class="tags">
 
 <span>Antimicrobial Resistance</span>
-
 <span>AMR</span>
-
-<span>Antibiotic Misuse</span>
-
 <span>Bacterial Evolution</span>
-
+<span>Antibiotic Stewardship</span>
 <span>Microbiology</span>
-
 <span>Public Health</span>
-
 <span>One Health</span>
 
 </div>
@@ -224,16 +296,15 @@ Scientific Focus
 
 
 <h2>
-Key Scientific Message
+Central Message
 </h2>
 
 
-<p class="quote">
+<p class="highlight">
 
-Antibiotics have transformed modern medicine, but their effectiveness depends on responsible use. Understanding antimicrobial resistance is essential for protecting future generations from difficult-to-treat bacterial infections.
+The future effectiveness of antibiotics depends not only on developing new therapies, but also on understanding bacterial evolution, preventing misuse, and applying responsible antimicrobial strategies.
 
 </p>
-
 
 
 </div>
