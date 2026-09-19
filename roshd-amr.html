@@ -40,10 +40,11 @@ padding:25px;
 }
 
 
+/* Top navigation */
 
 .back{
 
-margin-bottom:20px;
+margin-bottom:15px;
 font-size:15px;
 
 }
@@ -57,6 +58,63 @@ text-decoration:none;
 }
 
 
+/* Next article button */
+
+.next-article{
+
+display:block;
+
+margin-bottom:28px;
+
+background:linear-gradient(135deg,#2563eb,#1e40af);
+
+color:white;
+
+padding:18px 24px;
+
+border-radius:18px;
+
+box-shadow:
+0 12px 30px rgba(37,99,235,.25);
+
+transition:.3s;
+
+text-decoration:none;
+
+}
+
+
+.next-article:hover{
+
+transform:translateY(-4px);
+
+box-shadow:
+0 18px 40px rgba(37,99,235,.35);
+
+}
+
+
+.next-article strong{
+
+display:block;
+
+font-size:20px;
+
+margin-bottom:5px;
+
+}
+
+
+.next-article span{
+
+font-size:15px;
+
+color:#dbeafe;
+
+}
+
+
+
 
 /* Main publication card */
 
@@ -65,7 +123,8 @@ text-decoration:none;
 background:white;
 border-radius:22px;
 padding:30px;
-box-shadow:0 15px 40px rgba(0,0,0,.08);
+box-shadow:
+0 15px 40px rgba(0,0,0,.08);
 
 }
 
@@ -95,11 +154,18 @@ width:50%;
 
 width:100%;
 height:520px;
+
 object-fit:contain;
+
 background:#ffffff;
+
 border-radius:15px;
+
 padding:5px;
-box-shadow:0 10px 25px rgba(0,0,0,.15);
+
+box-shadow:
+0 10px 25px rgba(0,0,0,.15);
+
 transition:.3s;
 
 }
@@ -112,21 +178,25 @@ transform:scale(1.02);
 }
 
 
-
 /* Badge */
 
 .badge{
 
 display:inline-block;
+
 background:#fee2e2;
+
 color:#991b1b;
+
 padding:7px 16px;
+
 border-radius:25px;
+
 font-size:14px;
+
 margin-bottom:15px;
 
 }
-
 
 
 /* Title */
@@ -134,8 +204,11 @@ margin-bottom:15px;
 h1{
 
 font-size:32px;
+
 line-height:1.25;
+
 color:#1e3a8a;
+
 margin:10px 0;
 
 }
@@ -145,11 +218,12 @@ margin:10px 0;
 .meta{
 
 color:var(--gray);
+
 font-size:15px;
+
 margin-bottom:20px;
 
 }
-
 
 
 /* Text */
@@ -157,11 +231,12 @@ margin-bottom:20px;
 .summary{
 
 font-size:16px;
+
 line-height:1.8;
+
 text-align:justify;
 
 }
-
 
 
 /* Highlight */
@@ -169,15 +244,20 @@ text-align:justify;
 .highlight{
 
 margin-top:25px;
+
 background:#eff6ff;
+
 border-left:5px solid #2563eb;
+
 padding:18px;
+
 border-radius:10px;
+
 font-size:16px;
+
 font-weight:600;
 
 }
-
 
 
 /* Tags */
@@ -192,56 +272,23 @@ margin-top:25px;
 .tags span{
 
 display:inline-block;
+
 background:#dbeafe;
+
 color:#1e40af;
+
 padding:7px 14px;
+
 border-radius:20px;
+
 margin:5px;
+
 font-size:14px;
 
 }
-
-
-
-/* Mobile */
-
-@media(max-width:800px){
-
-.gallery{
-
-flex-direction:column;
-
-}
-
-
-.gallery a{
-
-width:100%;
-
-}
-
-
-.gallery img{
-
-height:auto;
-
-}
-
-
-h1{
-
-font-size:26px;
-
-}
-
-}
-
-
 </style>
 
-
 </head>
-
 
 
 <body>
@@ -250,11 +297,28 @@ font-size:26px;
 <div class="container">
 
 
+
 <div class="back">
 
 ← <a href="index.html">Back to main page</a>
 
 </div>
+
+
+
+<a href="roshd.html" class="next-article">
+
+<strong>
+🧠 Next Roshd Article →
+</strong>
+
+<span>
+Gut Microbiota, Probiotics & Mental Health
+</span>
+
+</a>
+
+
 
 
 
@@ -267,16 +331,19 @@ font-size:26px;
 
 <a href="roshd-antibiotic-resistance.png.png" target="_blank">
 
-<img src="roshd-antibiotic-resistance.png.png"
+<img 
+src="roshd-antibiotic-resistance.png.png"
 alt="Antimicrobial resistance article">
 
 </a>
 
 
 
+
 <a href="roshd-antibiotic-consumption-world.png.png" target="_blank">
 
-<img src="roshd-antibiotic-consumption-world.png.png"
+<img 
+src="roshd-antibiotic-consumption-world.png.png"
 alt="Antibiotic consumption across the world">
 
 </a>
@@ -297,6 +364,7 @@ Roshd Educational Magazine | Science Communication
 
 
 
+
 <h1>
 
 A Day When Drugs May No Longer Work:
@@ -305,6 +373,8 @@ A Day When Drugs May No Longer Work:
 The Global Crisis of Antimicrobial Resistance
 
 </h1>
+
+
 
 
 
@@ -317,16 +387,19 @@ Published: 2026
 
 
 
-<p class="summary">
 
+<p class="summary">
 
 Antimicrobial resistance (AMR) is transforming once-treatable infections into a growing global health threat. This article explores how excessive and inappropriate antibiotic use accelerates bacterial adaptation, allowing resistant microorganisms to survive and spread.
 
 
+<br><br>
+
+
 By presenting global antibiotic consumption patterns and explaining the consequences of antimicrobial pressure, the article highlights why antibiotic effectiveness cannot be taken for granted and why responsible antimicrobial use is essential for protecting future generations.
 
-
 </p>
+
 
 
 
@@ -340,6 +413,7 @@ A future where common infections become difficult or impossible to treat is no l
 
 
 
+
 <h3>
 
 Key Topics
@@ -347,29 +421,55 @@ Key Topics
 </h3>
 
 
+
+
+
 <div class="tags">
 
-<span>Antimicrobial Resistance</span>
 
-<span>AMR</span>
+<span>
+Antimicrobial Resistance
+</span>
 
-<span>Antibiotic Misuse</span>
 
-<span>Bacterial Evolution</span>
+<span>
+AMR
+</span>
 
-<span>Microbiology</span>
 
-<span>Public Health</span>
+<span>
+Antibiotic Misuse
+</span>
 
-<span>One Health</span>
+
+<span>
+Bacterial Evolution
+</span>
+
+
+<span>
+Microbiology
+</span>
+
+
+<span>
+Public Health
+</span>
+
+
+<span>
+One Health
+</span>
+
+
 
 </div>
 
 
 
 
-</div>
 
+</div>
 
 
 </div>
