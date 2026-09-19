@@ -12,11 +12,13 @@
 <style>
 
 :root{
+
 --primary:#1e3a8a;
 --blue:#2563eb;
 --soft:#eff6ff;
 --text:#1e293b;
 --muted:#64748b;
+
 }
 
 
@@ -28,13 +30,10 @@ box-sizing:border-box;
 body{
 
 margin:0;
-font-family:
-"Inter",
-Arial,
-sans-serif;
-
+font-family:"Inter",Arial,sans-serif;
 background:#f8fafc;
 color:var(--text);
+line-height:1.7;
 
 }
 
@@ -53,16 +52,17 @@ padding:25px;
 .card{
 
 background:white;
-border-radius:24px;
-padding:32px;
+border-radius:22px;
+padding:30px;
 margin-bottom:25px;
 
 box-shadow:
-0 15px 40px rgba(15,23,42,.08);
+0 12px 35px rgba(15,23,42,.08);
 
 border:1px solid #e2e8f0;
 
 }
+
 
 
 
@@ -71,7 +71,6 @@ border:1px solid #e2e8f0;
 display:flex;
 align-items:center;
 gap:12px;
-
 margin-bottom:20px;
 
 }
@@ -82,9 +81,7 @@ margin-bottom:20px;
 
 width:7px;
 height:28px;
-
 background:#2563eb;
-
 border-radius:10px;
 
 }
@@ -103,9 +100,9 @@ color:#0f172a;
 
 h2{
 
+font-size:26px;
 margin:0;
 color:#1e3a8a;
-font-size:26px;
 
 }
 
@@ -128,11 +125,15 @@ line-height:1.8;
 
 
 
+
+/* Hero */
+
+
 .hero{
 
 display:flex;
 align-items:center;
-gap:45px;
+gap:40px;
 
 }
 
@@ -150,13 +151,11 @@ flex:1;
 
 width:270px;
 height:310px;
-
 object-fit:cover;
-
 border-radius:25px;
 
 box-shadow:
-0 15px 35px rgba(0,0,0,.18);
+0 15px 35px rgba(0,0,0,.15);
 
 }
 
@@ -166,8 +165,7 @@ box-shadow:
 
 font-size:20px;
 color:#64748b;
-
-margin:8px 0 20px;
+margin:8px 0 18px;
 
 }
 
@@ -183,17 +181,30 @@ margin-right:8px;
 
 background:#dbeafe;
 
-border-radius:25px;
-
 color:#1d4ed8;
+
+border-radius:25px;
 
 text-decoration:none;
 
 font-weight:600;
 
+transition:.3s;
+
 }
 
 
+
+.links a:hover{
+
+background:#bfdbfe;
+
+}
+
+
+
+
+/* Profile */
 
 
 .tag{
@@ -213,284 +224,19 @@ margin:4px;
 font-size:14px;
 
 }
-/* ================================
-   Publications
-================================ */
 
 
-.publications{
 
-display:grid;
-grid-template-columns:1fr;
-gap:15px;
 
-}
-
-
-
-.pub-card{
-
-background:#f8fafc;
-
-border:1px solid #e2e8f0;
-
-border-radius:18px;
-
-padding:18px 22px;
-
-display:flex;
-
-justify-content:space-between;
-
-align-items:center;
-
-gap:20px;
-
-}
-
-
-
-.pub-card h3{
-
-margin:0 0 8px;
-
-font-size:18px;
-
-}
-
-
-
-.pub-card p{
-
-margin:0;
-
-color:#64748b;
-
-font-size:14px;
-
-}
-
-
-
-.pub-btn{
-
-white-space:nowrap;
-
-background:#2563eb;
-
-color:white;
-
-padding:8px 18px;
-
-border-radius:20px;
-
-text-decoration:none;
-
-font-size:14px;
-
-font-weight:600;
-
-}
-
-
-
-.pub-btn:hover{
-
-background:#1d4ed8;
-
-}
-
-
-
-
-
-/* ================================
-   Highlight Cards
-================================ */
-
-
-
-.highlight{
-
-display:grid;
-
-grid-template-columns:1fr 1fr;
-
-gap:20px;
-
-}
-
-
-
-
-.highlight-card{
-
-background:linear-gradient(
-135deg,
-#eff6ff,
-#ffffff
-);
-
-
-border:1px solid #dbeafe;
-
-border-radius:22px;
-
-padding:25px;
-
-text-decoration:none;
-
-color:#1e293b;
-
-transition:.3s;
-
-}
-
-
-
-.highlight-card:hover{
-
-transform:translateY(-5px);
-
-box-shadow:
-0 15px 30px rgba(37,99,235,.15);
-
-}
-
-
-
-.highlight-card h3{
-
-margin-top:0;
-
-font-size:22px;
-
-}
-
-
-
-.card-button{
-
-display:inline-block;
-
-margin-top:12px;
-
-padding:10px 18px;
-
-background:#2563eb;
-
-color:white;
-
-border-radius:25px;
-
-text-decoration:none;
-
-font-weight:600;
-
-font-size:14px;
-
-}
-
-
-
-
-
-/* Education */
-
-
-.edu{
-
-display:grid;
-
-gap:15px;
-
-}
-
-
-.edu-box{
-
-padding:18px;
-
-background:#f8fafc;
-
-border-radius:16px;
-
-border:1px solid #e2e8f0;
-
-}
-
-
-
-.edu-box h3{
-
-margin:0;
-
-}
-
-
-
-
-
-/* Skills */
-
-
-.skills li{
-
-margin-bottom:10px;
-
-}
-
-
-
-
-
-
-/* CV Button */
-
-
-.cv-btn{
-
-display:inline-block;
-
-background:#1e3a8a;
-
-color:white;
-
-padding:14px 30px;
-
-border-radius:30px;
-
-text-decoration:none;
-
-font-weight:bold;
-
-}
-
-
+/* Mobile */
 
 
 @media(max-width:800px){
 
+
 .hero{
 
 flex-direction:column-reverse;
-
-}
-
-
-.highlight{
-
-grid-template-columns:1fr;
-
-}
-
-
-
-.pub-card{
-
-flex-direction:column;
-
-align-items:flex-start;
 
 }
 
@@ -501,6 +247,15 @@ h1{
 font-size:32px;
 
 }
+
+
+.hero img{
+
+width:220px;
+height:260px;
+
+}
+
 
 }
 
@@ -552,9 +307,7 @@ analysis to investigate biological systems and biomedical challenges.
 
 <p>
 
-📧 avaliallahi92@gmail.com
-<br>
-📍 Tehran, Iran
+📧 valiallahialaleh@gmail.com
 
 </p>
 
@@ -562,13 +315,20 @@ analysis to investigate biological systems and biomedical challenges.
 
 <div class="links">
 
-<a href="#">
+
+<a href="https://scholar.google.com/citations?user=L6U-OsQAAAAJ&hl=en"
+target="_blank">
+
 Google Scholar
+
 </a>
 
 
-<a href="#">
+<a href="https://www.linkedin.com/in/alaleh-valiallahi/"
+target="_blank">
+
 LinkedIn
+
 </a>
 
 
@@ -579,7 +339,8 @@ LinkedIn
 
 
 
-<img src="alalehphoto.jpg">
+<img src="alalehphoto.jpg"
+alt="Alaleh Valiallahi">
 
 
 </div>
@@ -588,7 +349,8 @@ LinkedIn
 
 
 
-<!-- PROFILE -->
+
+<!-- RESEARCH PROFILE -->
 
 
 <div class="card">
@@ -608,9 +370,9 @@ Research Profile
 
 <p>
 
-My research background covers molecular microbiology,
-biotechnology, pathogen detection, microbial adaptation,
-and biomedical applications.
+My research interests lie at the interface of molecular microbiology,
+biotechnology, and biomedical sciences, including pathogen detection,
+microbial adaptation, molecular diagnostics, and biological systems.
 
 </p>
 
@@ -619,6 +381,7 @@ and biomedical applications.
 <span class="tag">
 Molecular Microbiology
 </span>
+
 
 <span class="tag">
 Biotechnology
@@ -641,14 +404,7 @@ Biomedical Sciences
 
 
 
-</div>
-
-
-
-
-
-
-<!-- PUBLICATIONS -->
+</div><!-- PUBLICATIONS -->
 
 
 <div class="card">
@@ -676,7 +432,7 @@ Selected Publications
 <div>
 
 <h3>
-PLGA Nanoparticles as Drug Delivery Systems in Leishmaniasis Chemotherapy
+PLGA Nanoparticles as New Drug Delivery Systems in Leishmaniasis Chemotherapy: A Review of Current Practices
 </h3>
 
 
@@ -684,11 +440,16 @@ PLGA Nanoparticles as Drug Delivery Systems in Leishmaniasis Chemotherapy
 Current Medicinal Chemistry · 2024
 </p>
 
+
 </div>
 
 
-<a class="pub-btn" href="#">
-View Article
+<a class="pub-btn"
+href="https://doi.org/10.2174/0929867331666230823094737"
+target="_blank">
+
+View Article →
+
 </a>
 
 
@@ -712,15 +473,21 @@ Optimization for Rapid Detection of E. coli O157:H7 Using Real-Time LAMP
 Research in Molecular Medicine · 2022
 </p>
 
+
 </div>
 
 
-<a class="pub-btn" href="#">
-View Article
+<a class="pub-btn"
+href="https://doi.org/10.32598/rmm.10.2.903.8"
+target="_blank">
+
+View Article →
+
 </a>
 
 
 </div>
+
 
 
 
@@ -732,7 +499,7 @@ View Article
 <div>
 
 <h3>
-Rapid Detection of E. coli O157:H7 Using Multiplex PCR
+Rapid and Simple Detection of Escherichia coli O157:H7 Using Multiplex PCR
 </h3>
 
 
@@ -740,11 +507,16 @@ Rapid Detection of E. coli O157:H7 Using Multiplex PCR
 Chulalongkorn Medical Journal · 2022
 </p>
 
+
 </div>
 
 
-<a class="pub-btn" href="#">
-View Article
+<a class="pub-btn"
+href="https://doi.org/10.58837/CHULA.CMJ.66.1.1"
+target="_blank">
+
+View Article →
+
 </a>
 
 
@@ -756,6 +528,12 @@ View Article
 
 
 </div>
+
+
+
+
+
+
 <!-- RESEARCH HIGHLIGHTS -->
 
 
@@ -778,7 +556,8 @@ Research Highlights
 
 
 
-<a class="highlight-card" href="thesis.html">
+<a class="highlight-card"
+href="thesis.html">
 
 
 <h3>
@@ -788,14 +567,17 @@ Research Highlights
 
 <p>
 
-Research project focused on molecular biotechnology,
-experimental design, data analysis, and scientific investigation.
+Molecular biotechnology research project
+including experimental design, molecular analysis,
+and scientific investigation.
 
 </p>
 
 
 <span class="card-button">
+
 Explore Thesis →
+
 </span>
 
 
@@ -805,7 +587,10 @@ Explore Thesis →
 
 
 
-<a class="highlight-card" href="roshd-amr.html">
+
+
+<a class="highlight-card"
+href="roshd-amr.html">
 
 
 <h3>
@@ -815,14 +600,17 @@ Explore Thesis →
 
 <p>
 
-Scientific communication articles covering microbiology,
-antimicrobial resistance, and biomedical concepts for a broad audience.
+Science communication articles exploring
+microbiology, antimicrobial resistance,
+and biomedical concepts.
 
 </p>
 
 
 <span class="card-button">
-View Article →
+
+View Articles →
+
 </span>
 
 
@@ -830,18 +618,10 @@ View Article →
 
 
 
-
 </div>
 
 
 </div>
-
-
-
-
-
-
-
 <!-- EDUCATION -->
 
 
@@ -860,11 +640,6 @@ Education
 
 
 
-
-<div class="edu">
-
-
-
 <div class="edu-box">
 
 
@@ -877,12 +652,13 @@ M.Sc. Biotechnology (Molecular Biotechnology)
 
 GPA: 16.97 / 20 (≈3.7/4)
 <br>
-Thesis grade: Excellent
+Thesis evaluation: Excellent
 
 </p>
 
 
 </div>
+
 
 
 
@@ -904,9 +680,6 @@ GPA: 16.43 / 20 (≈3.6/4)
 
 </div>
 
-
-
-</div>
 
 
 </div>
@@ -935,7 +708,7 @@ Technical & Research Skills
 
 
 
-<ul class="skills">
+<ul>
 
 
 <li>
@@ -946,19 +719,19 @@ PCR-based assays, primer design, DNA/RNA extraction and molecular workflows.
 
 <li>
 <strong>Microbiology:</strong>
-Pathogen detection, antimicrobial resistance concepts and microbial analysis.
+Pathogen detection, microbial analysis, and antimicrobial resistance concepts.
 </li>
 
 
 <li>
 <strong>Bioinformatics:</strong>
-Sequence analysis, annotation and molecular data interpretation.
+Sequence analysis, annotation, and molecular data interpretation.
 </li>
 
 
 <li>
 <strong>Scientific Communication:</strong>
-Scientific writing, manuscript preparation and data presentation.
+Scientific writing, manuscript preparation, and data presentation.
 </li>
 
 
@@ -1006,7 +779,7 @@ Excellent M.Sc. thesis evaluation.
 
 
 <li>
-Two peer-reviewed publications from M.Sc. research.
+Peer-reviewed publications in molecular biotechnology and microbiology.
 </li>
 
 
@@ -1020,11 +793,12 @@ TOEFL iBT score: 99.
 </li>
 
 
-
 </ul>
 
 
+
 </div>
+
 
 
 
@@ -1039,7 +813,8 @@ TOEFL iBT score: 99.
 
 
 
-<a class="cv-btn" href="Alaleh_Valiallahi_CV.pdf">
+<a class="cv-btn"
+href="Alaleh_Valiallahi_CV.pdf">
 
 Download Full CV
 
@@ -1054,6 +829,7 @@ Download Full CV
 
 
 </div>
+
 
 
 </body>
