@@ -5,104 +5,186 @@
 
 <meta charset="UTF-8">
 
-<title>A Day When Drugs May No Longer Work</title>
+<title>A Day When Drugs May No Longer Work | Roshd Magazine</title>
 
 <meta name="viewport" content="width=device-width, initial-scale=1">
 
+
 <style>
 
-body{
-margin:0;
-font-family:Arial, sans-serif;
-background:#f8fafc;
-color:#0f172a;
+:root{
+--blue:#1e40af;
+--light:#eff6ff;
+--text:#0f172a;
+--gray:#64748b;
 }
+
+
+body{
+
+margin:0;
+font-family:"Inter",Arial,sans-serif;
+background:#f8fafc;
+color:var(--text);
+
+}
+
+
 
 .container{
-max-width:1050px;
+
+max-width:1150px;
 margin:auto;
-padding:30px;
+padding:25px;
+
 }
 
 
-.card{
+
+.back{
+
+margin-bottom:20px;
+font-size:15px;
+
+}
+
+
+a{
+
+color:#2563eb;
+text-decoration:none;
+
+}
+
+
+
+/* Main publication card */
+
+.publication{
+
 background:white;
-border-radius:20px;
+border-radius:22px;
 padding:30px;
-box-shadow:0 12px 35px rgba(0,0,0,.08);
+box-shadow:0 15px 40px rgba(0,0,0,.08);
+
 }
 
+
+
+/* Images */
 
 .gallery{
 
 display:flex;
-gap:20px;
+gap:25px;
 justify-content:center;
+align-items:center;
 margin-bottom:25px;
+
+}
+
+
+.gallery a{
+
+width:50%;
 
 }
 
 
 .gallery img{
 
-width:45%;
-height:350px;
+width:100%;
+height:520px;
 object-fit:contain;
-background:#fff;
+background:#ffffff;
 border-radius:15px;
-box-shadow:0 8px 20px rgba(0,0,0,.15);
+padding:5px;
+box-shadow:0 10px 25px rgba(0,0,0,.15);
+transition:.3s;
 
 }
 
+
+.gallery img:hover{
+
+transform:scale(1.02);
+
+}
+
+
+
+/* Badge */
 
 .badge{
 
 display:inline-block;
 background:#fee2e2;
 color:#991b1b;
-padding:7px 15px;
-border-radius:20px;
+padding:7px 16px;
+border-radius:25px;
 font-size:14px;
 margin-bottom:15px;
 
 }
 
 
+
+/* Title */
+
 h1{
 
-font-size:36px;
-line-height:1.2;
+font-size:32px;
+line-height:1.25;
 color:#1e3a8a;
-margin-bottom:10px;
+margin:10px 0;
 
 }
+
 
 
 .meta{
 
-color:#64748b;
-font-size:16px;
+color:var(--gray);
+font-size:15px;
+margin-bottom:20px;
 
 }
 
 
+
+/* Text */
+
 .summary{
 
-font-size:17px;
-line-height:1.9;
+font-size:16px;
+line-height:1.8;
 text-align:justify;
 
 }
 
 
+
+/* Highlight */
+
 .highlight{
 
 margin-top:25px;
-padding:20px;
 background:#eff6ff;
 border-left:5px solid #2563eb;
-font-size:18px;
+padding:18px;
+border-radius:10px;
+font-size:16px;
 font-weight:600;
+
+}
+
+
+
+/* Tags */
+
+h3{
+
+margin-top:25px;
 
 }
 
@@ -112,32 +194,54 @@ font-weight:600;
 display:inline-block;
 background:#dbeafe;
 color:#1e40af;
-padding:8px 14px;
+padding:7px 14px;
 border-radius:20px;
 margin:5px;
+font-size:14px;
 
 }
 
 
-@media(max-width:700px){
+
+/* Mobile */
+
+@media(max-width:800px){
 
 .gallery{
+
 flex-direction:column;
+
 }
+
+
+.gallery a{
+
+width:100%;
+
+}
+
 
 .gallery img{
-width:100%;
+
+height:auto;
+
 }
+
 
 h1{
-font-size:28px;
+
+font-size:26px;
+
 }
 
 }
+
 
 </style>
 
+
 </head>
+
 
 
 <body>
@@ -146,22 +250,50 @@ font-size:28px;
 <div class="container">
 
 
-<div class="card">
+<div class="back">
+
+← <a href="index.html">Back to main page</a>
+
+</div>
+
+
+
+<div class="publication">
+
 
 
 <div class="gallery">
 
-<img src="roshd-antibiotic-resistance.png.png">
 
-<img src="roshd-antibiotic-consumption-world.png.png">
+<a href="roshd-antibiotic-resistance.png.png" target="_blank">
+
+<img src="roshd-antibiotic-resistance.png.png"
+alt="Antimicrobial resistance article">
+
+</a>
+
+
+
+<a href="roshd-antibiotic-consumption-world.png.png" target="_blank">
+
+<img src="roshd-antibiotic-consumption-world.png.png"
+alt="Antibiotic consumption across the world">
+
+</a>
+
 
 </div>
+
+
 
 
 
 <div class="badge">
+
 Roshd Educational Magazine | Science Communication
+
 </div>
+
 
 
 
@@ -169,54 +301,75 @@ Roshd Educational Magazine | Science Communication
 
 A Day When Drugs May No Longer Work:
 <br>
+
 The Global Crisis of Antimicrobial Resistance
 
 </h1>
 
 
-<p class="meta">
+
+<div class="meta">
+
 Published: 2026
-</p>
+
+</div>
+
 
 
 
 <p class="summary">
 
-Antimicrobial resistance is transforming once-treatable infections into a growing global health threat. This article explores how excessive and inappropriate antibiotic use accelerates bacterial adaptation, allowing resistant microorganisms to survive and spread.
 
-Through global antibiotic consumption patterns and scientific explanations, the article highlights why antibiotic effectiveness cannot be taken for granted and why responsible antimicrobial use is essential for protecting future generations.
+Antimicrobial resistance (AMR) is transforming once-treatable infections into a growing global health threat. This article explores how excessive and inappropriate antibiotic use accelerates bacterial adaptation, allowing resistant microorganisms to survive and spread.
+
+
+By presenting global antibiotic consumption patterns and explaining the consequences of antimicrobial pressure, the article highlights why antibiotic effectiveness cannot be taken for granted and why responsible antimicrobial use is essential for protecting future generations.
+
 
 </p>
 
 
 
+
 <div class="highlight">
 
-A future where common infections become untreatable is no longer a distant possibility — antimicrobial resistance has become one of the defining challenges of modern medicine.
+A future where common infections become difficult or impossible to treat is no longer a distant concern. Antimicrobial resistance has become one of the defining challenges of modern medicine.
 
 </div>
+
 
 
 
 <h3>
+
 Key Topics
+
 </h3>
 
 
-<div>
+<div class="tags">
 
 <span>Antimicrobial Resistance</span>
+
 <span>AMR</span>
+
 <span>Antibiotic Misuse</span>
+
 <span>Bacterial Evolution</span>
+
 <span>Microbiology</span>
+
 <span>Public Health</span>
 
-</div>
-
-
+<span>One Health</span>
 
 </div>
+
+
+
+
+</div>
+
 
 
 </div>
