@@ -12,13 +12,11 @@
 <style>
 
 :root{
-
 --primary:#1e3a8a;
 --blue:#2563eb;
 --soft:#eff6ff;
 --text:#1e293b;
 --muted:#64748b;
-
 }
 
 
@@ -28,23 +26,19 @@ box-sizing:border-box;
 
 
 body{
-
 margin:0;
 font-family:"Inter",Arial,sans-serif;
 background:#f8fafc;
 color:var(--text);
-line-height:1.7;
-
+line-height:1.6;
 }
 
 
 
 .container{
-
 max-width:1100px;
 margin:auto;
 padding:25px;
-
 }
 
 
@@ -52,17 +46,16 @@ padding:25px;
 .card{
 
 background:white;
-border-radius:22px;
-padding:30px;
-margin-bottom:25px;
+border-radius:24px;
+padding:32px;
+margin-bottom:28px;
 
 box-shadow:
-0 12px 35px rgba(15,23,42,.08);
+0 15px 40px rgba(15,23,42,.07);
 
 border:1px solid #e2e8f0;
 
 }
-
 
 
 
@@ -71,21 +64,19 @@ border:1px solid #e2e8f0;
 display:flex;
 align-items:center;
 gap:12px;
-margin-bottom:20px;
+margin-bottom:25px;
 
 }
-
 
 
 .section-title span{
 
 width:7px;
-height:28px;
+height:30px;
 background:#2563eb;
 border-radius:10px;
 
 }
-
 
 
 h1{
@@ -100,7 +91,7 @@ color:#0f172a;
 
 h2{
 
-font-size:26px;
+font-size:28px;
 margin:0;
 color:#1e3a8a;
 
@@ -111,6 +102,7 @@ color:#1e3a8a;
 h3{
 
 color:#1e3a8a;
+margin-top:0;
 
 }
 
@@ -124,16 +116,13 @@ line-height:1.8;
 }
 
 
-
-
-/* Hero */
-
+/* HERO */
 
 .hero{
 
 display:flex;
 align-items:center;
-gap:40px;
+gap:45px;
 
 }
 
@@ -152,10 +141,10 @@ flex:1;
 width:270px;
 height:310px;
 object-fit:cover;
-border-radius:25px;
+border-radius:28px;
 
 box-shadow:
-0 15px 35px rgba(0,0,0,.15);
+0 18px 40px rgba(0,0,0,.18);
 
 }
 
@@ -165,7 +154,7 @@ box-shadow:
 
 font-size:20px;
 color:#64748b;
-margin:8px 0 18px;
+margin:8px 0 20px;
 
 }
 
@@ -173,17 +162,18 @@ margin:8px 0 18px;
 
 .links a{
 
-display:inline-block;
+display:inline-flex;
+align-items:center;
 
-padding:9px 18px;
+padding:10px 20px;
 
-margin-right:8px;
+margin-right:10px;
 
 background:#dbeafe;
 
 color:#1d4ed8;
 
-border-radius:25px;
+border-radius:30px;
 
 text-decoration:none;
 
@@ -194,7 +184,6 @@ transition:.3s;
 }
 
 
-
 .links a:hover{
 
 background:#bfdbfe;
@@ -202,10 +191,7 @@ background:#bfdbfe;
 }
 
 
-
-
-/* Profile */
-
+/* TAGS */
 
 .tag{
 
@@ -215,11 +201,11 @@ background:#eff6ff;
 
 color:#1e40af;
 
-padding:7px 14px;
+padding:7px 15px;
 
 border-radius:20px;
 
-margin:4px;
+margin:5px;
 
 font-size:14px;
 
@@ -227,12 +213,219 @@ font-size:14px;
 
 
 
+/* PUBLICATIONS NEW STYLE */
 
-/* Mobile */
+
+.publications{
+
+display:grid;
+
+gap:18px;
+
+}
+
+
+
+.pub-card{
+
+background:linear-gradient(
+135deg,
+#ffffff,
+#f8fbff
+);
+
+border:1px solid #dbeafe;
+
+border-radius:18px;
+
+padding:20px 22px;
+
+display:flex;
+
+justify-content:space-between;
+
+align-items:center;
+
+gap:20px;
+
+transition:.3s;
+
+}
+
+
+
+.pub-card:hover{
+
+transform:translateY(-3px);
+
+box-shadow:
+0 12px 30px rgba(37,99,235,.12);
+
+}
+
+
+
+.pub-card h3{
+
+font-size:19px;
+
+margin-bottom:8px;
+
+}
+
+
+
+.pub-card p{
+
+margin:0;
+
+color:#64748b;
+
+font-size:15px;
+
+}
+
+
+
+.pub-btn{
+
+background:#2563eb;
+
+color:white;
+
+padding:9px 18px;
+
+border-radius:22px;
+
+text-decoration:none;
+
+font-weight:600;
+
+font-size:14px;
+
+white-space:nowrap;
+
+}
+
+
+
+.pub-btn:hover{
+
+background:#1d4ed8;
+
+}
+
+
+
+/* HIGHLIGHTS */
+
+
+.highlight{
+
+display:grid;
+
+grid-template-columns:1fr 1fr;
+
+gap:22px;
+
+}
+
+
+
+.highlight-card{
+
+text-decoration:none;
+
+background:
+linear-gradient(
+135deg,
+#f8fbff,
+#ffffff
+);
+
+border:1px solid #dbeafe;
+
+border-radius:20px;
+
+padding:25px;
+
+transition:.3s;
+
+}
+
+
+
+.highlight-card:hover{
+
+transform:translateY(-5px);
+
+box-shadow:
+0 15px 35px rgba(37,99,235,.15);
+
+}
+
+
+
+.highlight-card h3{
+
+font-size:22px;
+
+}
+
+
+
+.highlight-card p{
+
+color:#475569;
+
+}
+
+
+
+.card-button{
+
+display:inline-block;
+
+margin-top:15px;
+
+background:#2563eb;
+
+color:white;
+
+padding:10px 18px;
+
+border-radius:25px;
+
+font-weight:600;
+
+}
+
+
+
+
+/* EDUCATION */
+
+
+.edu-box{
+
+padding:15px 0;
+
+border-bottom:1px solid #e2e8f0;
+
+}
+
+
+.edu-box:last-child{
+
+border:none;
+
+}
+
+
+/* MOBILE */
 
 
 @media(max-width:800px){
-
 
 .hero{
 
@@ -241,6 +434,21 @@ flex-direction:column-reverse;
 }
 
 
+.highlight{
+
+grid-template-columns:1fr;
+
+}
+
+
+.pub-card{
+
+flex-direction:column;
+
+align-items:flex-start;
+
+}
+
 
 h1{
 
@@ -248,34 +456,18 @@ font-size:32px;
 
 }
 
-
-.hero img{
-
-width:220px;
-height:260px;
-
-}
-
-
 }
 
 
 </style>
 
-
 </head>
-
 
 
 <body>
 
 
-<div class="container">
-
-
-
-<!-- HERO -->
-
+<div class="container"><!-- HERO -->
 
 <div class="card hero">
 
@@ -296,19 +488,17 @@ Molecular Microbiologist · PhD Applicant
 
 <p>
 
-Molecular microbiologist with experience in biotechnology,
-molecular diagnostics, and microbial research.
-My work combines experimental approaches and molecular
-analysis to investigate biological systems and biomedical challenges.
+Molecular microbiologist with experience in molecular diagnostics,
+biotechnology, and microbial research. My work focuses on understanding
+biological systems through experimental approaches, molecular analysis,
+and scientific investigation.
 
 </p>
 
 
 
 <p>
-
 📧 valiallahialaleh@gmail.com
-
 </p>
 
 
@@ -318,17 +508,13 @@ analysis to investigate biological systems and biomedical challenges.
 
 <a href="https://scholar.google.com/citations?user=L6U-OsQAAAAJ&hl=en"
 target="_blank">
-
 Google Scholar
-
 </a>
 
 
 <a href="https://www.linkedin.com/in/alaleh-valiallahi/"
 target="_blank">
-
 LinkedIn
-
 </a>
 
 
@@ -344,7 +530,6 @@ alt="Alaleh Valiallahi">
 
 
 </div>
-
 
 
 
@@ -370,9 +555,10 @@ Research Profile
 
 <p>
 
-My research interests lie at the interface of molecular microbiology,
+My research interests are centered on molecular microbiology,
 biotechnology, and biomedical sciences, including pathogen detection,
-microbial adaptation, molecular diagnostics, and biological systems.
+molecular diagnostics, microbial adaptation, and mechanisms underlying
+infectious diseases.
 
 </p>
 
@@ -382,29 +568,32 @@ microbial adaptation, molecular diagnostics, and biological systems.
 Molecular Microbiology
 </span>
 
-
 <span class="tag">
 Biotechnology
 </span>
-
 
 <span class="tag">
 Molecular Diagnostics
 </span>
 
-
 <span class="tag">
 Microbial Research
 </span>
-
 
 <span class="tag">
 Biomedical Sciences
 </span>
 
 
+</div>
 
-</div><!-- PUBLICATIONS -->
+
+
+
+
+
+
+<!-- PUBLICATIONS -->
 
 
 <div class="card">
@@ -428,18 +617,15 @@ Selected Publications
 
 <div class="pub-card">
 
-
 <div>
 
 <h3>
 PLGA Nanoparticles as New Drug Delivery Systems in Leishmaniasis Chemotherapy: A Review of Current Practices
 </h3>
 
-
 <p>
 Current Medicinal Chemistry · 2024
 </p>
-
 
 </div>
 
@@ -461,18 +647,15 @@ View Article →
 
 <div class="pub-card">
 
-
 <div>
 
 <h3>
 Optimization for Rapid Detection of E. coli O157:H7 Using Real-Time LAMP
 </h3>
 
-
 <p>
 Research in Molecular Medicine · 2022
 </p>
-
 
 </div>
 
@@ -495,18 +678,15 @@ View Article →
 
 <div class="pub-card">
 
-
 <div>
 
 <h3>
 Rapid and Simple Detection of Escherichia coli O157:H7 Using Multiplex PCR
 </h3>
 
-
 <p>
 Chulalongkorn Medical Journal · 2022
 </p>
-
 
 </div>
 
@@ -534,6 +714,7 @@ View Article →
 
 
 
+
 <!-- RESEARCH HIGHLIGHTS -->
 
 
@@ -552,7 +733,10 @@ Research Highlights
 
 
 
+
 <div class="highlight">
+
+
 
 
 
@@ -567,17 +751,14 @@ href="thesis.html">
 
 <p>
 
-Molecular biotechnology research project
-including experimental design, molecular analysis,
-and scientific investigation.
+Molecular biotechnology research project involving
+experimental design, molecular analysis, and scientific investigation.
 
 </p>
 
 
 <span class="card-button">
-
 Explore Thesis →
-
 </span>
 
 
@@ -600,17 +781,14 @@ href="roshd-amr.html">
 
 <p>
 
-Science communication articles exploring
-microbiology, antimicrobial resistance,
-and biomedical concepts.
+Science communication articles covering microbiology,
+antimicrobial resistance, and biomedical concepts.
 
 </p>
 
 
 <span class="card-button">
-
 View Articles →
-
 </span>
 
 
@@ -618,10 +796,18 @@ View Articles →
 
 
 
+
 </div>
 
 
 </div>
+
+
+
+
+
+
+
 <!-- EDUCATION -->
 
 
@@ -637,6 +823,7 @@ Education
 </h2>
 
 </div>
+
 
 
 
@@ -682,15 +869,7 @@ GPA: 16.43 / 20 (≈3.6/4)
 
 
 
-</div>
-
-
-
-
-
-
-
-<!-- SKILLS -->
+</div><!-- SKILLS -->
 
 
 <div class="card">
@@ -712,31 +891,46 @@ Technical & Research Skills
 
 
 <li>
+
 <strong>Molecular Biology:</strong>
-PCR-based assays, primer design, DNA/RNA extraction and molecular workflows.
+PCR-based assays, primer design, DNA/RNA extraction,
+and molecular workflows.
+
 </li>
 
 
+
 <li>
+
 <strong>Microbiology:</strong>
-Pathogen detection, microbial analysis, and antimicrobial resistance concepts.
+Pathogen detection, microbial analysis,
+and antimicrobial resistance concepts.
+
 </li>
 
 
+
 <li>
+
 <strong>Bioinformatics:</strong>
-Sequence analysis, annotation, and molecular data interpretation.
+Sequence analysis, annotation,
+and molecular data interpretation.
+
 </li>
+
 
 
 <li>
+
 <strong>Scientific Communication:</strong>
-Scientific writing, manuscript preparation, and data presentation.
+Scientific writing, manuscript preparation,
+and research presentation.
+
 </li>
+
 
 
 </ul>
-
 
 
 </div>
@@ -784,7 +978,7 @@ Peer-reviewed publications in molecular biotechnology and microbiology.
 
 
 <li>
-Top 4% nationally in Molecular Biotechnology entrance examination.
+Ranked among the top 4% nationally in Molecular Biotechnology entrance examination.
 </li>
 
 
@@ -796,9 +990,7 @@ TOEFL iBT score: 99.
 </ul>
 
 
-
 </div>
-
 
 
 
@@ -813,7 +1005,8 @@ TOEFL iBT score: 99.
 
 
 
-<a class="cv-btn"
+<a class="pub-btn"
+style="display:inline-block;padding:12px 30px;"
 href="Alaleh_Valiallahi_CV.pdf">
 
 Download Full CV
@@ -829,7 +1022,6 @@ Download Full CV
 
 
 </div>
-
 
 
 </body>
