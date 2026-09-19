@@ -4,7 +4,7 @@
 <head>
 
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <title>Alaleh Valiallahi | Molecular Microbiologist</title>
 
@@ -12,13 +12,11 @@
 <style>
 
 :root{
-
 --primary:#1e3a8a;
 --blue:#2563eb;
---light:#eff6ff;
+--soft:#eff6ff;
 --text:#1e293b;
 --muted:#64748b;
-
 }
 
 
@@ -30,12 +28,16 @@ box-sizing:border-box;
 body{
 
 margin:0;
-font-family:Inter,Arial,sans-serif;
+font-family:
+"Inter",
+Arial,
+sans-serif;
+
 background:#f8fafc;
 color:var(--text);
-line-height:1.7;
 
 }
+
 
 
 .container{
@@ -47,14 +49,43 @@ padding:25px;
 }
 
 
+
 .card{
 
 background:white;
-border-radius:22px;
-padding:35px;
-margin-bottom:28px;
-box-shadow:0 12px 35px rgba(15,23,42,.08);
+border-radius:24px;
+padding:32px;
+margin-bottom:25px;
+
+box-shadow:
+0 15px 40px rgba(15,23,42,.08);
+
 border:1px solid #e2e8f0;
+
+}
+
+
+
+.section-title{
+
+display:flex;
+align-items:center;
+gap:12px;
+
+margin-bottom:20px;
+
+}
+
+
+
+.section-title span{
+
+width:7px;
+height:28px;
+
+background:#2563eb;
+
+border-radius:10px;
 
 }
 
@@ -63,19 +94,21 @@ border:1px solid #e2e8f0;
 h1{
 
 font-size:42px;
-color:#0f172a;
 margin:0;
+color:#0f172a;
 
 }
+
 
 
 h2{
 
-font-size:25px;
-color:var(--primary);
-margin-top:0;
+margin:0;
+color:#1e3a8a;
+font-size:26px;
 
 }
+
 
 
 h3{
@@ -85,10 +118,11 @@ color:#1e3a8a;
 }
 
 
-.subtitle{
 
-font-size:20px;
-color:#64748b;
+p{
+
+font-size:16px;
+line-height:1.8;
 
 }
 
@@ -97,10 +131,11 @@ color:#64748b;
 .hero{
 
 display:flex;
-gap:40px;
 align-items:center;
+gap:45px;
 
 }
+
 
 
 .hero-text{
@@ -113,11 +148,26 @@ flex:1;
 
 .hero img{
 
-width:280px;
-height:320px;
+width:270px;
+height:310px;
+
 object-fit:cover;
+
 border-radius:25px;
-box-shadow:0 15px 35px rgba(0,0,0,.15);
+
+box-shadow:
+0 15px 35px rgba(0,0,0,.18);
+
+}
+
+
+
+.subtitle{
+
+font-size:20px;
+color:#64748b;
+
+margin:8px 0 20px;
 
 }
 
@@ -126,134 +176,297 @@ box-shadow:0 15px 35px rgba(0,0,0,.15);
 .links a{
 
 display:inline-block;
-margin-right:10px;
-margin-top:15px;
-padding:8px 18px;
+
+padding:9px 18px;
+
+margin-right:8px;
+
 background:#dbeafe;
+
+border-radius:25px;
+
 color:#1d4ed8;
-border-radius:20px;
+
 text-decoration:none;
+
 font-weight:600;
 
 }
 
-
-
-.section-title{
-
-display:flex;
-align-items:center;
-gap:10px;
-
-}
-
-
-.section-title span{
-
-width:8px;
-height:30px;
-background:#2563eb;
-border-radius:10px;
-
-}
 
 
 
 .tag{
 
 display:inline-block;
-padding:7px 15px;
-margin:5px;
-border-radius:20px;
+
 background:#eff6ff;
+
 color:#1e40af;
 
+padding:7px 14px;
+
+border-radius:20px;
+
+margin:4px;
+
+font-size:14px;
+
+}
+/* ================================
+   Publications
+================================ */
+
+
+.publications{
+
+display:grid;
+grid-template-columns:1fr;
+gap:15px;
+
 }
 
 
 
-.publication{
+.pub-card{
 
-padding:15px 0;
-border-bottom:1px solid #e2e8f0;
+background:#f8fafc;
+
+border:1px solid #e2e8f0;
+
+border-radius:18px;
+
+padding:18px 22px;
+
+display:flex;
+
+justify-content:space-between;
+
+align-items:center;
+
+gap:20px;
 
 }
 
 
-.publication:last-child{
 
-border-bottom:none;
+.pub-card h3{
+
+margin:0 0 8px;
+
+font-size:18px;
 
 }
 
 
 
-.publication a{
+.pub-card p{
 
-color:#2563eb;
+margin:0;
+
+color:#64748b;
+
+font-size:14px;
+
+}
+
+
+
+.pub-btn{
+
+white-space:nowrap;
+
+background:#2563eb;
+
+color:white;
+
+padding:8px 18px;
+
+border-radius:20px;
+
+text-decoration:none;
+
+font-size:14px;
+
 font-weight:600;
 
 }
 
 
 
+.pub-btn:hover{
+
+background:#1d4ed8;
+
+}
+
+
+
+
+
+/* ================================
+   Highlight Cards
+================================ */
+
+
+
 .highlight{
 
 display:grid;
+
 grid-template-columns:1fr 1fr;
+
 gap:20px;
 
 }
 
 
-.box{
 
-background:#eff6ff;
-padding:25px;
-border-radius:18px;
-text-decoration:none;
-color:#1e293b;
+
+.highlight-card{
+
+background:linear-gradient(
+135deg,
+#eff6ff,
+#ffffff
+);
+
+
 border:1px solid #dbeafe;
 
-}
+border-radius:22px;
 
+padding:25px;
 
+text-decoration:none;
 
-.box:hover{
+color:#1e293b;
 
-transform:translateY(-3px);
-
-}
-
-
-
-.edu-item{
-
-margin-bottom:18px;
+transition:.3s;
 
 }
 
 
 
-.button{
+.highlight-card:hover{
+
+transform:translateY(-5px);
+
+box-shadow:
+0 15px 30px rgba(37,99,235,.15);
+
+}
+
+
+
+.highlight-card h3{
+
+margin-top:0;
+
+font-size:22px;
+
+}
+
+
+
+.card-button{
 
 display:inline-block;
-padding:12px 22px;
+
+margin-top:12px;
+
+padding:10px 18px;
+
 background:#2563eb;
+
 color:white;
+
 border-radius:25px;
+
 text-decoration:none;
+
+font-weight:600;
+
+font-size:14px;
+
+}
+
+
+
+
+
+/* Education */
+
+
+.edu{
+
+display:grid;
+
+gap:15px;
+
+}
+
+
+.edu-box{
+
+padding:18px;
+
+background:#f8fafc;
+
+border-radius:16px;
+
+border:1px solid #e2e8f0;
+
+}
+
+
+
+.edu-box h3{
+
+margin:0;
+
+}
+
+
+
+
+
+/* Skills */
+
+
+.skills li{
+
+margin-bottom:10px;
+
+}
+
+
+
+
+
+
+/* CV Button */
+
+
+.cv-btn{
+
+display:inline-block;
+
+background:#1e3a8a;
+
+color:white;
+
+padding:14px 30px;
+
+border-radius:30px;
+
+text-decoration:none;
+
 font-weight:bold;
 
 }
 
 
-
-ul{
-
-padding-left:20px;
-
-}
 
 
 @media(max-width:800px){
@@ -272,17 +485,20 @@ grid-template-columns:1fr;
 }
 
 
-h1{
 
-font-size:32px;
+.pub-card{
+
+flex-direction:column;
+
+align-items:flex-start;
 
 }
 
 
-.hero img{
 
-width:220px;
-height:260px;
+h1{
+
+font-size:32px;
 
 }
 
@@ -295,6 +511,7 @@ height:260px;
 </head>
 
 
+
 <body>
 
 
@@ -303,6 +520,7 @@ height:260px;
 
 
 <!-- HERO -->
+
 
 <div class="card hero">
 
@@ -320,14 +538,16 @@ Molecular Microbiologist · PhD Applicant
 </div>
 
 
+
 <p>
 
-Molecular microbiologist with research experience in microbial detection,
-molecular assays, and biotechnology. My work combines experimental
-microbiology with molecular approaches to understand biological systems
-and develop practical biomedical solutions.
+Molecular microbiologist with experience in biotechnology,
+molecular diagnostics, and microbial research.
+My work combines experimental approaches and molecular
+analysis to investigate biological systems and biomedical challenges.
 
 </p>
+
 
 
 <p>
@@ -339,15 +559,18 @@ and develop practical biomedical solutions.
 </p>
 
 
+
 <div class="links">
 
 <a href="#">
 Google Scholar
 </a>
 
+
 <a href="#">
 LinkedIn
 </a>
+
 
 </div>
 
@@ -365,7 +588,7 @@ LinkedIn
 
 
 
-<!-- RESEARCH PROFILE -->
+<!-- PROFILE -->
 
 
 <div class="card">
@@ -374,6 +597,7 @@ LinkedIn
 <div class="section-title">
 
 <span></span>
+
 <h2>
 Research Profile
 </h2>
@@ -384,26 +608,48 @@ Research Profile
 
 <p>
 
-My research interests lie at the interface of molecular microbiology,
-biotechnology, and biomedical research, including pathogen detection,
-microbial adaptation, molecular diagnostics, and host–microbe interactions.
+My research background covers molecular microbiology,
+biotechnology, pathogen detection, microbial adaptation,
+and biomedical applications.
 
 </p>
 
 
 
-<div>
+<span class="tag">
+Molecular Microbiology
+</span>
 
-<span class="tag">Molecular Microbiology</span>
-<span class="tag">Biotechnology</span>
-<span class="tag">Microbial Systems</span>
-<span class="tag">Molecular Diagnostics</span>
-<span class="tag">Biomedical Research</span>
+<span class="tag">
+Biotechnology
+</span>
+
+
+<span class="tag">
+Molecular Diagnostics
+</span>
+
+
+<span class="tag">
+Microbial Research
+</span>
+
+
+<span class="tag">
+Biomedical Sciences
+</span>
+
+
 
 </div>
 
 
-</div><!-- SELECTED PUBLICATIONS -->
+
+
+
+
+<!-- PUBLICATIONS -->
+
 
 <div class="card">
 
@@ -420,71 +666,96 @@ Selected Publications
 
 
 
-<div class="publication">
+<div class="publications">
+
+
+
+<div class="pub-card">
+
+
+<div>
 
 <h3>
 PLGA Nanoparticles as Drug Delivery Systems in Leishmaniasis Chemotherapy
 </h3>
 
+
 <p>
-First-author review · Current Medicinal Chemistry, 2024
-<br>
-Role: Literature synthesis and manuscript preparation
+Current Medicinal Chemistry · 2024
 </p>
 
-<a href="#">
-View article →
+</div>
+
+
+<a class="pub-btn" href="#">
+View Article
 </a>
+
 
 </div>
 
 
 
-<div class="publication">
+
+
+<div class="pub-card">
+
+
+<div>
 
 <h3>
 Optimization for Rapid Detection of E. coli O157:H7 Using Real-Time LAMP
 </h3>
 
+
 <p>
-Research in Molecular Medicine, 2022
-<br>
-Role: Assay development, optimisation and experimental data generation
+Research in Molecular Medicine · 2022
 </p>
 
-<a href="#">
-View article →
+</div>
+
+
+<a class="pub-btn" href="#">
+View Article
 </a>
+
 
 </div>
 
 
 
-<div class="publication">
+
+
+<div class="pub-card">
+
+
+<div>
 
 <h3>
 Rapid Detection of E. coli O157:H7 Using Multiplex PCR
 </h3>
 
+
 <p>
-Chulalongkorn Medical Journal, 2022
-<br>
-Role: Molecular assay development and data analysis
+Chulalongkorn Medical Journal · 2022
 </p>
 
-<a href="#">
-View article →
+</div>
+
+
+<a class="pub-btn" href="#">
+View Article
 </a>
 
-</div>
-
 
 </div>
 
 
 
+</div>
 
 
+</div>
 <!-- RESEARCH HIGHLIGHTS -->
 
 
@@ -506,20 +777,26 @@ Research Highlights
 <div class="highlight">
 
 
-<a class="box" href="thesis.html">
+
+<a class="highlight-card" href="thesis.html">
+
 
 <h3>
-🔬 Thesis Project
+🔬 M.Sc. Thesis Project
 </h3>
 
 
 <p>
 
-Molecular biotechnology research project,
-including experimental design, molecular analysis,
-and scientific investigation.
+Research project focused on molecular biotechnology,
+experimental design, data analysis, and scientific investigation.
 
 </p>
+
+
+<span class="card-button">
+Explore Thesis →
+</span>
 
 
 </a>
@@ -528,28 +805,37 @@ and scientific investigation.
 
 
 
-<a class="box" href="roshd.html">
+<a class="highlight-card" href="roshd-amr.html">
+
 
 <h3>
-📘 Roshd Science Articles
+📘 Roshd Science Communication
 </h3>
 
 
 <p>
 
-Science communication articles translating
-microbiology and biomedical concepts for a broad audience.
+Scientific communication articles covering microbiology,
+antimicrobial resistance, and biomedical concepts for a broad audience.
 
 </p>
+
+
+<span class="card-button">
+View Article →
+</span>
 
 
 </a>
 
 
+
+
 </div>
 
 
 </div>
+
 
 
 
@@ -574,7 +860,12 @@ Education
 
 
 
-<div class="edu-item">
+
+<div class="edu">
+
+
+
+<div class="edu-box">
 
 
 <h3>
@@ -596,7 +887,7 @@ Thesis grade: Excellent
 
 
 
-<div class="edu-item">
+<div class="edu-box">
 
 
 <h3>
@@ -618,6 +909,9 @@ GPA: 16.43 / 20 (≈3.6/4)
 </div>
 
 
+</div>
+
+
 
 
 
@@ -634,44 +928,42 @@ GPA: 16.43 / 20 (≈3.6/4)
 <span></span>
 
 <h2>
-Research Skills
+Technical & Research Skills
 </h2>
 
 </div>
 
 
 
-<ul>
+<ul class="skills">
 
 
 <li>
 <strong>Molecular Biology:</strong>
-DNA/RNA extraction, PCR-based assays, primer design and molecular workflows.
+PCR-based assays, primer design, DNA/RNA extraction and molecular workflows.
 </li>
-
 
 
 <li>
 <strong>Microbiology:</strong>
-pathogen detection, antimicrobial resistance concepts and microbial analysis.
+Pathogen detection, antimicrobial resistance concepts and microbial analysis.
 </li>
-
 
 
 <li>
 <strong>Bioinformatics:</strong>
-sequence analysis, annotation and molecular data interpretation.
+Sequence analysis, annotation and molecular data interpretation.
 </li>
-
 
 
 <li>
 <strong>Scientific Communication:</strong>
-manuscript preparation, scientific writing and data presentation.
+Scientific writing, manuscript preparation and data presentation.
 </li>
 
 
 </ul>
+
 
 
 </div>
@@ -704,28 +996,29 @@ Honours & Achievements
 
 
 <li>
-Registered TA-eae gene sequence in NCBI GenBank (MW584345).
+NCBI GenBank contributor (TA-eae gene sequence: MW584345).
 </li>
 
 
 <li>
-Excellent M.Sc. thesis grade.
+Excellent M.Sc. thesis evaluation.
 </li>
 
 
 <li>
-Two peer-reviewed publications derived from M.Sc. research.
+Two peer-reviewed publications from M.Sc. research.
 </li>
 
 
 <li>
-Ranked among top 4% nationally in Molecular Biotechnology entrance examination.
+Top 4% nationally in Molecular Biotechnology entrance examination.
 </li>
 
 
 <li>
 TOEFL iBT score: 99.
 </li>
+
 
 
 </ul>
@@ -745,14 +1038,18 @@ TOEFL iBT score: 99.
 <div class="card" style="text-align:center;">
 
 
-<a class="button" href="Alaleh_Valiallahi_CV.pdf">
+
+<a class="cv-btn" href="Alaleh_Valiallahi_CV.pdf">
 
 Download Full CV
 
 </a>
 
 
+
 </div>
+
+
 
 
 
