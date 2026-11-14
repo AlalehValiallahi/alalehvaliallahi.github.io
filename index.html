@@ -6,265 +6,655 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Alaleh Valiallahi | Molecular Microbiologist</title>
+<title>Alaleh Valiallahi | Academic Research Portfolio</title>
+
+<meta name="description" content="Academic portfolio of Alaleh Valiallahi, molecular microbiologist and researcher focusing on molecular biotechnology, microbial detection and biomedical research.">
 
 <style>
 
 :root {
---primary: #1e3a8a;
---blue: #2563eb;
---soft: #eff6ff;
---text: #1e293b;
---muted: #64748b;
+--navy: #101d3c;
+--navy2: #172b53;
+--blue: #3977f6;
+--cyan: #62c5dc;
+--text: #202c42;
+--muted: #718096;
+--bg: #f4f7fc;
+--white: #ffffff;
+--border: #e4eaf3;
 }
 
 * {
 box-sizing: border-box;
+margin: 0;
+padding: 0;
+}
+
+html {
+scroll-behavior: smooth;
+scroll-padding-top: 90px;
 }
 
 body {
-margin: 0;
-font-family: "Inter", Arial, sans-serif;
-background: #f8fafc;
+font-family: Inter, "Segoe UI", Arial, sans-serif;
+background: var(--bg);
 color: var(--text);
-line-height: 1.7;
+line-height: 1.75;
+}
+
+a {
+text-decoration: none;
+color: inherit;
 }
 
 .container {
-max-width: 1100px;
+max-width: 1160px;
 margin: auto;
-padding: 25px;
+padding: 0 25px;
 }
 
-.card {
-background: white;
-border-radius: 24px;
-padding: 32px;
-margin-bottom: 28px;
-box-shadow: 0 15px 40px rgba(15,23,42,.07);
-border: 1px solid #e2e8f0;
+/* NAVIGATION */
+
+.navbar {
+position: sticky;
+top: 0;
+z-index: 100;
+background: rgba(16,29,60,.96);
+backdrop-filter: blur(15px);
+border-bottom: 1px solid rgba(255,255,255,.1);
 }
 
-.section-title {
+.nav-inner {
+max-width: 1160px;
+margin: auto;
+padding: 14px 25px;
 display: flex;
 align-items: center;
-gap: 12px;
-margin-bottom: 25px;
+justify-content: space-between;
+gap: 20px;
 }
 
-.section-title span {
-width: 7px;
-height: 30px;
-background: var(--blue);
-border-radius: 10px;
+.logo {
+font-size: 22px;
+font-weight: 800;
+color: white;
+letter-spacing: 1px;
 }
 
-h1 {
-font-size: 42px;
-margin: 0;
-color: #0f172a;
+.logo span {
+color: var(--cyan);
 }
 
-h2 {
-font-size: 28px;
-margin: 0;
-color: var(--primary);
+.nav-links {
+display: flex;
+gap: 25px;
+align-items: center;
 }
 
-h3 {
-color: var(--primary);
-margin-top: 0;
+.nav-links a {
+color: #d9e4fa;
+font-size: 13px;
+font-weight: 600;
+transition: .3s;
 }
 
-p {
-font-size: 16px;
-line-height: 1.8;
+.nav-links a:hover {
+color: var(--cyan);
 }
 
 /* HERO */
 
 .hero {
-display: flex;
+background:
+radial-gradient(circle at 85% 15%, rgba(57,119,246,.28), transparent 30%),
+linear-gradient(125deg, #101d3c, #1b3564 70%, #24477b);
+color: white;
+border-radius: 0 0 35px 35px;
+overflow: hidden;
+position: relative;
+}
+
+.hero-content {
+display: grid;
+grid-template-columns: 1.3fr .7fr;
 align-items: center;
-gap: 45px;
+gap: 65px;
+padding: 85px 0;
 }
 
-.hero-text {
-flex: 1;
-}
-
-.hero img {
-width: 270px;
-height: 310px;
-object-fit: cover;
-border-radius: 28px;
-box-shadow: 0 18px 40px rgba(0,0,0,.18);
-}
-
-.subtitle {
-font-size: 20px;
-color: var(--muted);
-margin: 8px 0 20px;
-}
-
-.links a {
+.eyebrow {
 display: inline-flex;
 align-items: center;
-padding: 10px 20px;
-margin-right: 10px;
-background: #dbeafe;
-color: #1d4ed8;
-border-radius: 30px;
-text-decoration: none;
-font-weight: 600;
-transition: .3s;
+gap: 9px;
+font-size: 12px;
+letter-spacing: 2px;
+color: #9bdcf0;
+font-weight: 700;
+margin-bottom: 22px;
 }
 
-.links a:hover {
-background: #bfdbfe;
+.eyebrow::before {
+content: "";
+width: 27px;
+height: 2px;
+background: var(--cyan);
 }
 
-/* RESEARCH TAGS */
-
-.tag {
-display: inline-block;
-background: var(--soft);
-color: #1e40af;
-padding: 7px 15px;
-border-radius: 20px;
-margin: 5px;
-font-size: 14px;
+.hero h1 {
+font-size: clamp(38px, 5vw, 62px);
+line-height: 1.15;
+letter-spacing: -2px;
+margin-bottom: 15px;
 }
 
-/* PUBLICATIONS */
-
-.publications {
-display: grid;
-gap: 18px;
-}
-
-.pub-card {
-background: linear-gradient(135deg, #fff, #f8fbff);
-border: 1px solid #dbeafe;
-border-radius: 18px;
-padding: 20px 22px;
-display: flex;
-justify-content: space-between;
-align-items: center;
-gap: 20px;
-transition: .3s;
-}
-
-.pub-card:hover {
-transform: translateY(-3px);
-box-shadow: 0 12px 30px rgba(37,99,235,.12);
-}
-
-.pub-card h3 {
+.hero-subtitle {
 font-size: 19px;
+color: #a9c6f5;
+margin-bottom: 25px;
+font-weight: 500;
+}
+
+.hero-description {
+max-width: 640px;
+color: #e0e9f8;
+font-size: 16px;
+line-height: 2;
+}
+
+.hero-actions {
+display: flex;
+flex-wrap: wrap;
+gap: 13px;
+margin-top: 32px;
+}
+
+.btn {
+display: inline-flex;
+align-items: center;
+justify-content: center;
+padding: 12px 22px;
+border-radius: 30px;
+font-size: 14px;
+font-weight: 700;
+transition: .3s;
+}
+
+.btn-primary {
+background: var(--blue);
+color: white;
+}
+
+.btn-primary:hover {
+background: #5890ff;
+transform: translateY(-3px);
+}
+
+.btn-outline {
+border: 1px solid rgba(255,255,255,.4);
+color: white;
+}
+
+.btn-outline:hover {
+background: rgba(255,255,255,.12);
+}
+
+.hero-image {
+position: relative;
+justify-self: end;
+}
+
+.hero-image img {
+width: 320px;
+height: 380px;
+object-fit: cover;
+border-radius: 25px;
+border: 5px solid rgba(255,255,255,.15);
+box-shadow: 0 25px 65px rgba(0,0,0,.35);
+}
+
+.image-caption {
+position: absolute;
+bottom: 18px;
+left: -35px;
+background: white;
+color: var(--navy);
+padding: 13px 20px;
+border-radius: 13px;
+font-size: 12px;
+font-weight: 700;
+box-shadow: 0 10px 30px rgba(0,0,0,.2);
+}
+
+/* GENERAL SECTIONS */
+
+section {
+padding: 75px 0 0;
+}
+
+.section-heading {
+margin-bottom: 32px;
+}
+
+.section-label {
+font-size: 11px;
+letter-spacing: 2px;
+color: var(--blue);
+font-weight: 800;
+text-transform: uppercase;
 margin-bottom: 8px;
 }
 
-.pub-card p {
-margin: 0;
+.section-heading h2 {
+font-size: 31px;
+color: var(--navy);
+letter-spacing: -.7px;
+}
+
+.section-heading p {
 color: var(--muted);
+margin-top: 8px;
 font-size: 15px;
 }
 
-.pub-btn {
-background: var(--blue);
-color: white;
-padding: 9px 18px;
+.panel {
+background: white;
+border: 1px solid var(--border);
 border-radius: 22px;
-text-decoration: none;
+padding: 34px;
+box-shadow: 0 10px 35px rgba(20,40,80,.04);
+}
+
+/* RESEARCH PROFILE */
+
+.research-text {
+font-size: 16px;
+color: #526178;
+max-width: 950px;
+line-height: 2;
+}
+
+.research-tags {
+display: flex;
+flex-wrap: wrap;
+gap: 10px;
+margin-top: 25px;
+}
+
+.tag {
+background: #edf3ff;
+color: #2854a5;
+border: 1px solid #dce8ff;
+padding: 8px 15px;
+border-radius: 30px;
+font-size: 13px;
 font-weight: 600;
-font-size: 14px;
-white-space: nowrap;
 }
 
-.pub-btn:hover {
-background: #1d4ed8;
-}
+/* EDUCATION */
 
-/* RESEARCH HIGHLIGHTS */
-
-.highlight {
+.education-grid {
 display: grid;
 grid-template-columns: 1fr 1fr;
 gap: 22px;
 }
 
-.highlight-card {
-text-decoration: none;
-background: linear-gradient(135deg, #f8fbff, #fff);
-border: 1px solid #dbeafe;
+.education-card {
+background: white;
+border: 1px solid var(--border);
 border-radius: 20px;
+padding: 27px;
+position: relative;
+overflow: hidden;
+transition: .3s;
+}
+
+.education-card::before {
+content: "";
+position: absolute;
+top: 0;
+left: 0;
+width: 100%;
+height: 4px;
+background: linear-gradient(90deg, var(--blue), var(--cyan));
+}
+
+.education-card:hover {
+transform: translateY(-5px);
+box-shadow: 0 15px 35px rgba(37,99,235,.1);
+}
+
+.degree {
+font-size: 12px;
+letter-spacing: 2px;
+color: var(--blue);
+font-weight: 800;
+}
+
+.education-card h3 {
+font-size: 20px;
+color: var(--navy);
+margin: 12px 0;
+line-height: 1.5;
+}
+
+.edu-meta {
+font-size: 13px;
+color: var(--muted);
+}
+
+.edu-score {
+display: inline-block;
+margin-top: 20px;
+background: #edf5ff;
+padding: 7px 13px;
+border-radius: 8px;
+color: #2455a4;
+font-size: 13px;
+font-weight: 700;
+}
+
+/* PUBLICATIONS */
+
+.publication-list {
+display: grid;
+gap: 17px;
+}
+
+.publication {
+display: grid;
+grid-template-columns: 1fr auto;
+gap: 25px;
+align-items: center;
+background: white;
+border: 1px solid var(--border);
+border-radius: 18px;
 padding: 25px;
 transition: .3s;
 }
 
-.highlight-card:hover {
-transform: translateY(-5px);
-box-shadow: 0 15px 35px rgba(37,99,235,.15);
+.publication:hover {
+transform: translateX(4px);
+border-color: #b8d0ff;
+box-shadow: 0 12px 30px rgba(37,99,235,.07);
 }
 
-.highlight-card h3 {
-font-size: 22px;
+.pub-number {
+font-size: 12px;
+color: var(--blue);
+font-weight: 800;
+letter-spacing: 1px;
+margin-bottom: 8px;
 }
 
-.highlight-card p {
-color: #475569;
+.publication h3 {
+font-size: 17px;
+color: var(--navy);
+line-height: 1.6;
+margin-bottom: 8px;
 }
 
-.card-button {
-display: inline-block;
-margin-top: 15px;
+.journal {
+font-size: 13px;
+color: var(--muted);
+}
+
+.pub-link {
+background: #edf3ff;
+color: #2455a4;
+padding: 10px 17px;
+border-radius: 25px;
+font-size: 12px;
+font-weight: 800;
+white-space: nowrap;
+transition: .3s;
+}
+
+.pub-link:hover {
 background: var(--blue);
 color: white;
-padding: 10px 18px;
-border-radius: 25px;
-font-weight: 600;
 }
 
-/* FOOTER */
+/* PROJECTS */
+
+.projects-grid {
+display: grid;
+grid-template-columns: 1fr 1fr;
+gap: 22px;
+}
+
+.project-card {
+display: block;
+position: relative;
+overflow: hidden;
+padding: 30px;
+min-height: 255px;
+border-radius: 22px;
+background: linear-gradient(140deg, #14264b, #244b87);
+color: white;
+transition: .3s;
+}
+
+.project-card:nth-child(2) {
+background: linear-gradient(140deg, #163d55, #19758a);
+}
+
+.project-card:hover {
+transform: translateY(-6px);
+box-shadow: 0 20px 40px rgba(20,40,80,.16);
+}
+
+.project-icon {
+font-size: 29px;
+margin-bottom: 20px;
+}
+
+.project-type {
+font-size: 11px;
+letter-spacing: 2px;
+color: #a9d8f4;
+font-weight: 800;
+margin-bottom: 10px;
+}
+
+.project-card h3 {
+font-size: 21px;
+color: white;
+margin-bottom: 13px;
+line-height: 1.5;
+}
+
+.project-card p {
+font-size: 14px;
+color: #e0eafa;
+line-height: 1.8;
+}
+
+.project-link {
+display: inline-block;
+margin-top: 22px;
+font-size: 13px;
+font-weight: 800;
+color: white;
+border-bottom: 1px solid var(--cyan);
+padding-bottom: 4px;
+}
+
+/* LANGUAGES */
+
+.language-panel {
+background: linear-gradient(120deg, #edf3ff, #f5fbff);
+border: 1px solid #dce7f7;
+border-radius: 22px;
+padding: 30px;
+display: flex;
+align-items: center;
+justify-content: space-between;
+gap: 25px;
+}
+
+.language-item {
+flex: 1;
+}
+
+.language-item strong {
+display: block;
+color: var(--navy);
+font-size: 17px;
+}
+
+.language-item span {
+font-size: 13px;
+color: var(--muted);
+}
+
+/* CONTACT */
+
+.contact-panel {
+background: var(--navy);
+color: white;
+border-radius: 24px;
+padding: 42px;
+display: flex;
+justify-content: space-between;
+align-items: center;
+gap: 30px;
+}
+
+.contact-panel h2 {
+font-size: 27px;
+margin-bottom: 10px;
+}
+
+.contact-panel p {
+font-size: 14px;
+color: #c3d2ed;
+}
+
+.contact-email {
+display: inline-block;
+margin-top: 12px;
+color: #8fdcf0;
+font-weight: 700;
+}
 
 footer {
 text-align: center;
+padding: 35px 10px;
 color: var(--muted);
-font-size: 14px;
-padding: 15px;
+font-size: 12px;
 }
 
-/* MOBILE */
+/* ANIMATION */
 
-@media(max-width:800px) {
-
-.hero {
-flex-direction: column-reverse;
-align-items: flex-start;
+@keyframes fadeUp {
+from {
+opacity: 0;
+transform: translateY(20px);
+}
+to {
+opacity: 1;
+transform: translateY(0);
+}
 }
 
-.highlight {
+.hero-content {
+animation: fadeUp .8s ease both;
+}
+
+@media (prefers-reduced-motion: reduce) {
+html {
+scroll-behavior: auto;
+}
+*, *::before, *::after {
+animation-duration: .01ms !important;
+transition-duration: .01ms !important;
+}
+}
+
+/* RESPONSIVE */
+
+@media(max-width:850px) {
+
+.nav-inner {
+flex-wrap: wrap;
+}
+
+.nav-links {
+gap: 14px;
+overflow-x: auto;
+width: 100%;
+padding-bottom: 4px;
+}
+
+.nav-links a {
+white-space: nowrap;
+font-size: 12px;
+}
+
+.hero-content {
+grid-template-columns: 1fr;
+gap: 40px;
+padding: 60px 0;
+}
+
+.hero-image {
+justify-self: center;
+}
+
+.hero-image img {
+width: 270px;
+height: 320px;
+}
+
+.image-caption {
+left: -10px;
+}
+
+.education-grid,
+.projects-grid {
 grid-template-columns: 1fr;
 }
 
-.pub-card {
+.publication {
+grid-template-columns: 1fr;
+}
+
+.pub-link {
+justify-self: start;
+}
+
+.language-panel,
+.contact-panel {
 flex-direction: column;
 align-items: flex-start;
 }
 
-h1 {
-font-size: 32px;
 }
 
-.card {
-padding: 24px;
+@media(max-width:500px) {
+
+.container {
+padding: 0 17px;
 }
 
-.hero img {
-max-width: 100%;
-height: auto;
-aspect-ratio: 270/310;
+.hero h1 {
+font-size: 39px;
+}
+
+.panel {
+padding: 23px;
+}
+
+.section-heading h2 {
+font-size: 26px;
+}
+
+.hero-content {
+padding: 48px 0;
+}
+
+.contact-panel {
+padding: 27px;
 }
 
 }
@@ -274,62 +664,101 @@ aspect-ratio: 270/310;
 
 <body>
 
-<div class="container">
+<!-- NAVIGATION -->
+
+<nav class="navbar">
+<div class="nav-inner">
+
+<a href="#" class="logo">AV<span>.</span></a>
+
+<div class="nav-links">
+<a href="#about">About</a>
+<a href="#education">Education</a>
+<a href="#publications">Publications</a>
+<a href="#research">Research</a>
+<a href="#contact">Contact</a>
+</div>
+
+</div>
+</nav>
+
 
 <!-- HERO -->
 
-<div class="card hero">
+<header class="hero">
+<div class="container">
 
-<div class="hero-text">
+<div class="hero-content">
 
-<h1>Alaleh Valiallahi</h1>
+<div>
 
-<div class="subtitle">
+<div class="eyebrow">
+ACADEMIC RESEARCH PORTFOLIO
+</div>
+
+<h1>Alaleh<br>Valiallahi</h1>
+
+<div class="hero-subtitle">
 Molecular Microbiologist · Researcher
 </div>
 
-<p>
-Molecular microbiologist with academic training in molecular biotechnology and cellular and molecular biology. My research and laboratory experience includes molecular detection of <em>Escherichia coli</em> O157, microbiological laboratory procedures, and scientific communication.
+<p class="hero-description">
+Molecular microbiologist with academic training in molecular biotechnology and cellular and molecular biology. My research interests include molecular detection of <em>Escherichia coli</em> O157, microbial characterization, molecular diagnostics, and scientific communication.
 </p>
 
-<p>
-📧 valiallahialaleh@gmail.com
-</p>
+<div class="hero-actions">
 
-<div class="links">
-
-<a href="https://scholar.google.com/citations?user=L6U-OsQAAAAJ&hl=en"
+<a class="btn btn-primary"
+href="https://scholar.google.com/citations?user=L6U-OsQAAAAJ&hl=en"
 target="_blank" rel="noopener">
-Google Scholar
+Google Scholar ↗
 </a>
 
-<a href="https://www.linkedin.com/in/alaleh-valiallahi/"
+<a class="btn btn-outline"
+href="https://www.linkedin.com/in/alaleh-valiallahi/"
 target="_blank" rel="noopener">
-LinkedIn
+LinkedIn ↗
 </a>
 
 </div>
 
 </div>
+
+<div class="hero-image">
 
 <img src="alalehphoto.jpg"
-alt="Alaleh Valiallahi">
+alt="Alaleh Valiallahi in a microbiology laboratory">
+
+<div class="image-caption">
+Molecular Microbiology & Research
+</div>
 
 </div>
 
+</div>
+</div>
+</header>
 
-<!-- RESEARCH PROFILE -->
 
-<div class="card">
+<main class="container">
 
-<div class="section-title">
-<span></span>
+<!-- ABOUT -->
+
+<section id="about">
+
+<div class="section-heading">
+<div class="section-label">01 / ABOUT</div>
 <h2>Research Profile</h2>
+<p>Research interests and scientific focus</p>
 </div>
 
-<p>
-My research interests are centered on molecular microbiology, biotechnology, and biomedical sciences, including pathogen detection, molecular diagnostics, microbial characterization, and antimicrobial research.
+<div class="panel">
+
+<p class="research-text">
+My research interests are centered on molecular microbiology, biotechnology, and biomedical sciences, including pathogen detection, molecular diagnostics, microbial characterization, and antimicrobial research. I am particularly interested in applying molecular approaches to the study and detection of bacterial pathogens.
 </p>
+
+<div class="research-tags">
 
 <span class="tag">Molecular Microbiology</span>
 <span class="tag">Biotechnology</span>
@@ -339,149 +768,266 @@ My research interests are centered on molecular microbiology, biotechnology, and
 
 </div>
 
+</div>
+</section>
+
+
+<!-- EDUCATION -->
+
+<section id="education">
+
+<div class="section-heading">
+<div class="section-label">02 / ACADEMIC BACKGROUND</div>
+<h2>Education</h2>
+<p>Academic degrees and research training</p>
+</div>
+
+<div class="education-grid">
+
+<div class="education-card">
+
+<div class="degree">MASTER'S DEGREE · M.Sc.</div>
+
+<h3>Molecular Biotechnology</h3>
+
+<p class="edu-meta">
+2018 – 2020
+</p>
+
+<div class="edu-score">
+GPA: 16.97 / 20
+</div>
+
+<div class="edu-score">
+Thesis Evaluation: Excellent
+</div>
+
+</div>
+
+
+<div class="education-card">
+
+<div class="degree">BACHELOR'S DEGREE · B.Sc.</div>
+
+<h3>Cellular and Molecular Biology – Microbiology</h3>
+
+<p class="edu-meta">
+2013/2014 – 2017
+</p>
+
+<div class="edu-score">
+GPA: 16.43 / 20
+</div>
+
+</div>
+
+</div>
+</section>
+
 
 <!-- PUBLICATIONS -->
 
-<div class="card">
+<section id="publications">
 
-<div class="section-title">
-<span></span>
+<div class="section-heading">
+<div class="section-label">03 / SCIENTIFIC OUTPUT</div>
 <h2>Selected Publications</h2>
+<p>Peer-reviewed research and scientific contributions</p>
 </div>
 
-<div class="publications">
+<div class="publication-list">
 
-<div class="pub-card">
+
+<div class="publication">
 
 <div>
+<div class="pub-number">PUBLICATION 01 · 2024</div>
 
 <h3>
 PLGA Nanoparticles as New Drug Delivery Systems in Leishmaniasis Chemotherapy: A Review of Current Practices
 </h3>
 
-<p>
-Current Medicinal Chemistry, 31(39), 6371–6392 · 2024
+<p class="journal">
+Current Medicinal Chemistry, 31(39), 6371–6392
 </p>
-
 </div>
 
-<a class="pub-btn"
+<a class="pub-link"
 href="https://doi.org/10.2174/0929867331666230823094737"
 target="_blank" rel="noopener">
-View Article →
+VIEW ARTICLE ↗
 </a>
 
 </div>
 
 
-<div class="pub-card">
+<div class="publication">
 
 <div>
+<div class="pub-number">PUBLICATION 02 · 2022</div>
 
 <h3>
 Optimization for Rapid Detection of <em>E. coli</em> O157 Using Real-Time Loop-Mediated Isothermal Amplification
 </h3>
 
-<p>
-Research in Molecular Medicine, 10(2), 115–122 · 2022
+<p class="journal">
+Research in Molecular Medicine, 10(2), 115–122
 </p>
-
 </div>
 
-<a class="pub-btn"
+<a class="pub-link"
 href="https://doi.org/10.32598/rmm.10.2.903.8"
 target="_blank" rel="noopener">
-View Article →
+VIEW ARTICLE ↗
 </a>
 
 </div>
 
 
-<div class="pub-card">
+<div class="publication">
 
 <div>
+<div class="pub-number">PUBLICATION 03 · 2022</div>
 
 <h3>
 Rapid and Simple Detection of <em>Escherichia coli</em> O157 Using Multiplex PCR
 </h3>
 
-<p>
-Chulalongkorn Medical Journal, 66(1) · 2022
+<p class="journal">
+Chulalongkorn Medical Journal, 66(1)
 </p>
-
 </div>
 
-<a class="pub-btn"
+<a class="pub-link"
 href="https://doi.org/10.58837/CHULA.CMJ.66.1.1"
 target="_blank" rel="noopener">
-View Article →
+VIEW ARTICLE ↗
 </a>
 
 </div>
 
-</div>
 
 </div>
+</section>
 
 
-<!-- RESEARCH HIGHLIGHTS -->
+<!-- RESEARCH PROJECTS -->
 
-<div class="card">
+<section id="research">
 
-<div class="section-title">
-<span></span>
-<h2>Research Highlights</h2>
+<div class="section-heading">
+<div class="section-label">04 / PROJECTS & SCIENCE</div>
+<h2>Research & Scientific Activities</h2>
+<p>Selected academic projects and science communication</p>
 </div>
 
-<div class="highlight">
+<div class="projects-grid">
 
 
-<a class="highlight-card"
-href="thesis.html">
+<a class="project-card" href="thesis.html">
 
-<h3>
-🔬 M.Sc. Thesis Project
-</h3>
+<div class="project-icon">⌬</div>
+
+<div class="project-type">MASTER'S RESEARCH PROJECT</div>
+
+<h3>M.Sc. Thesis Project</h3>
 
 <p>
 Development of Rapid Molecular Diagnostic Approaches for the Detection of <em>Escherichia coli</em> O157 Using LAMP-Based Technologies.
 </p>
 
-<span class="card-button">
-Explore Thesis →
+<span class="project-link">
+EXPLORE THESIS →
 </span>
 
 </a>
 
 
-<a class="highlight-card"
-href="roshd-amr.html">
+<a class="project-card" href="roshd-amr.html">
 
-<h3>
-📘 Roshd Science Communication
-</h3>
+<div class="project-icon">✦</div>
+
+<div class="project-type">SCIENCE COMMUNICATION</div>
+
+<h3>Roshd Biology Education</h3>
 
 <p>
 Educational and analytical science communication articles covering microbiology and antimicrobial resistance.
 </p>
 
-<span class="card-button">
-View Articles →
+<span class="project-link">
+EXPLORE ARTICLES →
 </span>
 
 </a>
 
 
 </div>
+</section>
+
+
+<!-- LANGUAGES -->
+
+<section id="languages">
+
+<div class="section-heading">
+<div class="section-label">05 / COMMUNICATION</div>
+<h2>Languages</h2>
+</div>
+
+<div class="language-panel">
+
+<div class="language-item">
+<strong>Persian</strong>
+<span>Native</span>
+</div>
+
+<div class="language-item">
+<strong>English</strong>
+<span>Advanced · TOEFL iBT: 99/120</span>
+</div>
 
 </div>
+</section>
+
+
+<!-- CONTACT -->
+
+<section id="contact">
+
+<div class="contact-panel">
+
+<div>
+<div class="section-label">GET IN TOUCH</div>
+
+<h2>Academic Contact</h2>
+
+<p>
+For academic communication, research discussions and scientific collaboration.
+</p>
+
+<a class="contact-email"
+href="mailto:valiallahialaleh@gmail.com">
+valiallahialaleh@gmail.com
+</a>
+</div>
+
+<a class="btn btn-primary"
+href="https://www.linkedin.com/in/alaleh-valiallahi/"
+target="_blank" rel="noopener">
+Connect on LinkedIn ↗
+</a>
+
+</div>
+
+</section>
+
+</main>
 
 
 <footer>
-© Alaleh Valiallahi · Molecular Microbiology & Research
+© 2026 Alaleh Valiallahi · Academic Research Portfolio
 </footer>
-
-</div>
 
 </body>
 </html>
